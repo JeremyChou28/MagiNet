@@ -9,9 +9,8 @@ from torch.utils.data import DataLoader
 
 def load_data(datapath, dataset, miss_mechanism, miss_ratio, seqlen):
     '''
-    read traffic data: 读取数据中不包含时间点在时间序列中的位置信息
+    read traffic data: 
     '''
-    import pickle as pk
     # get adjacency matrix
     with open(datapath + "/{}/adj_mx.pkl".format(dataset), 'rb') as fb:
         A = pk.load(fb).astype(np.float32)

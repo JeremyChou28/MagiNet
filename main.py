@@ -25,7 +25,7 @@ parser.add_argument('--miss_mechanism',
                     type=str,
                     help='miss mechanism')
 parser.add_argument('--miss_ratio', default=0.5, type=float, help='miss ratio')
-parser.add_argument('--hidden_size', default=32, type=int)
+parser.add_argument('--hidden_size', default=16, type=int)
 parser.add_argument('--num_feature_in',
                     default=2,
                     type=int,
@@ -50,7 +50,7 @@ epochs = args.epochs
 seqlen = args.seqlen
 seed = args.seed
 
-if dataset == 'didi-chengdu' or dataset == 'didi-shenzhen':
+if dataset == 'Chengdu' or dataset == 'Shenzhen':
     from models.didi import *
 else:
     from models.pems import *
@@ -316,8 +316,6 @@ class MissSTImputer(nn.Module):
                                          stride=(1, 1))
         self.encoder = TransformerLayers(hidden_dim, seqlen)
         self.norm = nn.LayerNorm(hidden_dim)
-        # self.decoder = TransformerLayers(hidden_dim, 1)
-        # self.encoder_2_decoder = nn.Linear(hidden_dim, hidden_dim)
         self.maskemb = LearnableMaskEmb(hidden_dim)
         self.posemb = LearnablePositionEmb(hidden_dim)
         self.spatial = SpatialBlock(spatial_channels=16,
@@ -362,13 +360,6 @@ class MissSTImputer(nn.Module):
                                       position.view(B * N, L,
                                                     -1).long())  # B,N,L,D
 
-        # # spatial learning
-        # H_spa = self.spatial(learnableposemb, A_hat)  # B,N,L,D
-
-        # # temporal attention
-        # H_tem = self.encoder(H_spa)  # (B,N,L,D)
-        # H_norm = self.norm(H_tem).transpose(-1, -2)  # (B,N,D,L)
-
         # downstream STGNNs
         output = self.STGNNs(learnableposemb.transpose(-1, -2), m,
                              learnableposemb.transpose(-1, -2))
@@ -385,19 +376,9 @@ def main():
                    dataset, args.lr, args.hidden_size, args.batch_size,
                    args.seed))
 
-    # adj_pa = load_PA('../DSTAGNN-ICML2022/data/{}/strg_001_{}.csv'.format(
-    #     args.dataset, args.dataset))
-    # adj_TMD = load_weighted_adjacency_matrix(
-    #     '../DSTAGNN-ICML2022/data/{}/stag_001_{}.csv'.format(
-    #         args.dataset, args.dataset), args.num_nodes)
     adj_mx = weight_matrix(A)
     A_wave = torch.from_numpy(adj_mx).float().to(device)
     adj_pa = adj_mx
-    # L_tilde = scaled_Laplacian(adj_TMD)
-    # cheb_polynomials = [
-    #     torch.from_numpy(i).type(torch.FloatTensor).to(device)
-    #     for i in cheb_polynomial(L_tilde, K=3)
-    # ]
 
     AEmodel = MissSTImputer(num_nodes=args.num_nodes,
                             seqlen=args.seqlen,
@@ -407,17 +388,12 @@ def main():
                             adj_pa=adj_pa,
                             num_heads=4,
                             num_layers=2,
-                            learnable=True).to(device)  # 生成AE模型，并转移到GPU上去
+                            learnable=True).to(device)
     print('The structure of our model is shown below: \n')
     print(AEmodel)
-    loss_function = nn.SmoothL1Loss()  # 生成损失函数
-    # loss_function = nn.L1Loss()  # 生成损失函数
-    optimizer = optim.Adam(AEmodel.parameters(),
-                           lr=args.lr)  # 生成优化器，需要优化的是model的参数，学习率为0.001
-    # optimizer = optim.Adam(AEmodel.parameters(), lr=args.lr,
-    #                        weight_decay=1e-4)  # 生成优化器，需要优化的是model的参数，学习率为0.001
+    loss_function = nn.SmoothL1Loss()
+    optimizer = optim.Adam(AEmodel.parameters(), lr=args.lr)
 
-    # 开始迭代
     patience = 0
     best_val_mae = 999
     for epoch in range(epochs):
@@ -429,13 +405,11 @@ def main():
             x = x.to(device)  # (B,N,2,L)
             m = m.to(device)  # (B,N,2,L)
             y = y.to(device)  # (B,N,2,L)
-            # 前向传播
-            x_hat = AEmodel(x, m, A_wave)  # 模型的输出，在这里会自动调用model中的forward函数
-            loss = loss_function(x_hat, y[:, :, :1, :])  # 计算损失值，即目标函数
-            # 后向传播
-            optimizer.zero_grad()  # 梯度清零，否则上一步的梯度仍会存在
-            loss.backward()  # 后向传播计算梯度，这些梯度会保存在model.parameters里面
-            optimizer.step()  # 更新梯度，这一步与上一步主要是根据model.parameters联系起来了
+            x_hat = AEmodel(x, m, A_wave)
+            loss = loss_function(x_hat, y[:, :, :1, :])
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
             loss_epoch.append(loss.item())
 
         # valid
@@ -446,9 +420,7 @@ def main():
                 x = x.to(device)  # (B,N,2,L)
                 m = m.to(device)  # (B,N,2,L)
                 y = y[:, :, :1, :].detach().cpu().numpy()
-                # 前向传播
-                x_hat = AEmodel(x, m, A_wave).detach().cpu().numpy(
-                )  # 模型的输出，在这里会自动调用model中的forward函数
+                x_hat = AEmodel(x, m, A_wave).detach().cpu().numpy()
                 unnorm_x_hat = unnormalization(x_hat, mean, std)
                 unnorm_y = unnormalization(y, mean, std)
                 mask = m.detach().cpu().numpy()
@@ -476,8 +448,7 @@ def main():
         wandb.log({"train loss": loss.item(), "valid loss": valid_mae})
         print('Epoch [{}/{}] : '.format(epoch, epochs), 'loss = ',
               np.mean(loss_epoch),
-              "epoch_time: {}".format(time.time() -
-                                      epoch_time))  # loss是Tensor类型
+              "epoch_time: {}".format(time.time() - epoch_time))
     wandb.finish()
 
     predict(AEmodel, best_save_path, test_loader, mean, std, A_wave)
@@ -496,9 +467,7 @@ def predict(model, best_save_path, test_loader, mean, std, A_wave):
             x = x.to(device)  # (B,N,2,L)
             m = m.to(device)  # (B,N,2,L)
             y = y[:, :, :1, :].detach().cpu().numpy()
-            # 前向传播
-            x_hat = model(x, m, A_wave).detach().cpu().numpy(
-            )  # 模型的输出，在这里会自动调用model中的forward函数
+            x_hat = model(x, m, A_wave).detach().cpu().numpy()
             unnorm_x = unnormalization(x[:, :, :1, :].detach().cpu().numpy(),
                                        mean, std)
             unnorm_x_hat = unnormalization(x_hat, mean, std)
