@@ -76,7 +76,7 @@ torch.set_num_threads(10)
 
 def load_data(datapath, dataset, miss_mechanism, miss_ratio, seqlen):
     '''
-    read traffic data: 读取数据中不包含时间点在时间序列中的位置信息
+    read traffic data:
     '''
     import pickle as pk
     # get adjacency matrix
