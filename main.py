@@ -13,6 +13,7 @@ import argparse
 import wandb
 import math
 import time
+import yaml
 from utils import *
 
 parser = argparse.ArgumentParser()
@@ -40,6 +41,10 @@ parser.add_argument('--save_path', default='checkpoints/', type=str)
 parser.add_argument('--result_path', default='results/', type=str)
 parser.add_argument('--cuda', default=1, type=int)
 args = parser.parse_args()
+
+config_filename = 'config/{}.yaml'.format(args.dataset)
+with open(config_filename) as f:
+    config = yaml.load(f, Loader=yaml.FullLoader)
 
 datapath = './datasets'
 dataset = args.dataset
@@ -205,42 +210,6 @@ def generate_miss_loader():
     return train_loader, valid_loader, test_loader, mean, std, A
 
 
-class TransformerLayers(nn.Module):
-
-    def __init__(self, hidden_dim, nlayers, num_heads=4, dropout=0.1):
-        super().__init__()
-        self.d_model = hidden_dim
-        encoder_layers = TransformerEncoderLayer(hidden_dim, num_heads,
-                                                 hidden_dim * 4, dropout)
-        self.transformer_encoder = TransformerEncoder(encoder_layers, nlayers)
-
-    def forward(self, src):
-        B, N, L, D = src.shape
-        src = src * math.sqrt(self.d_model)
-        src = src.reshape(B * N, L, D)
-        src = src.transpose(0, 1)
-        output = self.transformer_encoder(src, mask=None)
-        output = output.transpose(0, 1).view(B, N, L, D)
-
-        return output  # [B, N, L, D]
-
-
-class SpatialBlock(nn.Module):
-
-    def __init__(self, spatial_channels, out_channels, num_nodes):
-        super(SpatialBlock, self).__init__()
-        self.norm = nn.LayerNorm(num_nodes)
-        self.fc = nn.Linear(out_channels, out_channels)
-        self.dropout = nn.Dropout(p=0.1)
-
-    def forward(self, X, A_hat):
-        lfs = torch.einsum("ij,jklm->kilm",
-                           [A_hat, X.permute(1, 0, 2, 3)])  # B,N,L,D
-        t = self.fc(lfs).permute(0, 2, 3, 1)  # B,L,D,N
-        t1 = self.norm(t).permute(0, 3, 1, 2)  # B,N,L,D
-        return self.dropout(t1)
-
-
 class LearnableMaskEmb(nn.Module):
 
     def __init__(self, hidden_dim):
@@ -285,7 +254,7 @@ class LearnablePositionEmb(nn.Module):
         return learnable_pos_emb
 
 
-class MissSTImputer(nn.Module):
+class MagiNet(nn.Module):
 
     def __init__(self,
                  num_nodes,
@@ -300,7 +269,7 @@ class MissSTImputer(nn.Module):
                  pe_learnable=True,
                  max_len=1000,
                  dropout=0.1):
-        super(MissSTImputer, self).__init__()
+        super(MagiNet, self).__init__()
 
         self.num_nodes = num_nodes
         self.seqlen = seqlen
@@ -314,13 +283,8 @@ class MissSTImputer(nn.Module):
                                          hidden_dim,
                                          kernel_size=(1, 1),
                                          stride=(1, 1))
-        self.encoder = TransformerLayers(hidden_dim, seqlen)
-        self.norm = nn.LayerNorm(hidden_dim)
         self.maskemb = LearnableMaskEmb(hidden_dim)
         self.posemb = LearnablePositionEmb(hidden_dim)
-        self.spatial = SpatialBlock(spatial_channels=16,
-                                    out_channels=hidden_dim,
-                                    num_nodes=num_nodes)
 
         self.STGNNs = make_model(DEVICE=device,
                                  num_of_d=1,
@@ -371,7 +335,7 @@ def main():
     train_loader, valid_loader, test_loader, mean, std, A = generate_miss_loader(
     )
 
-    wandb.init(project="learnable_mask_emb",
+    wandb.init(project="MagiNet",
                name="{}_lr{}_hiddensize{}_batchsize{}_seed{}".format(
                    dataset, args.lr, args.hidden_size, args.batch_size,
                    args.seed))
@@ -380,19 +344,19 @@ def main():
     A_wave = torch.from_numpy(adj_mx).float().to(device)
     adj_pa = adj_mx
 
-    AEmodel = MissSTImputer(num_nodes=args.num_nodes,
-                            seqlen=args.seqlen,
-                            in_channel=1,
-                            hidden_dim=args.hidden_size,
-                            adj_mx=adj_mx,
-                            adj_pa=adj_pa,
-                            num_heads=4,
-                            num_layers=2,
-                            learnable=True).to(device)
+    model = MagiNet(num_nodes=args.num_nodes,
+                    seqlen=args.seqlen,
+                    in_channel=1,
+                    hidden_dim=args.hidden_size,
+                    adj_mx=adj_mx,
+                    adj_pa=adj_pa,
+                    num_heads=4,
+                    num_layers=2,
+                    learnable=True).to(device)
     print('The structure of our model is shown below: \n')
-    print(AEmodel)
+    print(model)
     loss_function = nn.SmoothL1Loss()
-    optimizer = optim.Adam(AEmodel.parameters(), lr=args.lr)
+    optimizer = optim.Adam(model.parameters(), lr=args.lr)
 
     patience = 0
     best_val_mae = 999
@@ -400,12 +364,12 @@ def main():
         epoch_time = time.time()
         # train
         loss_epoch = []
-        AEmodel.train()
+        model.train()
         for _, (x, m, y) in enumerate(train_loader):
             x = x.to(device)  # (B,N,2,L)
             m = m.to(device)  # (B,N,2,L)
             y = y.to(device)  # (B,N,2,L)
-            x_hat = AEmodel(x, m, A_wave)
+            x_hat = model(x, m, A_wave)
             loss = loss_function(x_hat, y[:, :, :1, :])
             optimizer.zero_grad()
             loss.backward()
@@ -414,13 +378,13 @@ def main():
 
         # valid
         valid_maes, valid_rmses, valid_mapes = [], [], []
-        AEmodel.eval()
+        model.eval()
         with torch.no_grad():
             for _, (x, m, y) in enumerate(valid_loader):
                 x = x.to(device)  # (B,N,2,L)
                 m = m.to(device)  # (B,N,2,L)
                 y = y[:, :, :1, :].detach().cpu().numpy()
-                x_hat = AEmodel(x, m, A_wave).detach().cpu().numpy()
+                x_hat = model(x, m, A_wave).detach().cpu().numpy()
                 unnorm_x_hat = unnormalization(x_hat, mean, std)
                 unnorm_y = unnormalization(y, mean, std)
                 mask = m.detach().cpu().numpy()
@@ -439,7 +403,7 @@ def main():
                 best_save_path = args.save_path + '{}'.format(
                     dataset) + '/best_model_ms{}_seed{}.pth'.format(
                         args.miss_ratio, args.seed)
-                torch.save(AEmodel.state_dict(), best_save_path)
+                torch.save(model.state_dict(), best_save_path)
             # else:
             #     patience += 1
             #     if patience > 10:
@@ -451,7 +415,7 @@ def main():
               "epoch_time: {}".format(time.time() - epoch_time))
     wandb.finish()
 
-    predict(AEmodel, best_save_path, test_loader, mean, std, A_wave)
+    predict(model, best_save_path, test_loader, mean, std, A_wave)
 
 
 def predict(model, best_save_path, test_loader, mean, std, A_wave):

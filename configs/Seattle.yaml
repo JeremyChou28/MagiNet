@@ -1,0 +1,8 @@
+data:
+  batch_size: 16
+  test_batch_size: 16
+  val_batch_size: 16
+
+model:
+  num_nodes: 323
+  hidden_size: 32
