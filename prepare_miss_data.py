@@ -79,7 +79,6 @@ def produce_NA(X, p_miss, mecha="MCAR", opt=None, p_obs=None, q=None):
 
 
 def generate_missing(data, miss_ratio):
-    """对原始数据集做missing，MCAR"""
     seed_torch(0)
     n_masks = data.shape[0]  # batch_size
 

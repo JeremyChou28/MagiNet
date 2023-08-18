@@ -119,7 +119,6 @@ def generate_dataset(data, seqlen, mode):
 
 
 if __name__ == "__main__":
-    # 超参数
     seq_len = 12  # sliding window size for generating sequence
     train_ratio = 0.7  # train dataset size
     valid_ratio = 0.1  # valid dataset size
