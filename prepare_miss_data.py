@@ -71,17 +71,11 @@ def produce_NA(X, p_miss, mecha="MCAR", opt=None, p_obs=None, q=None):
     elif mecha == "MNAR" and opt == "selfmasked":
         mask = MNAR_self_mask_logistic(X, p_miss).double()
     else:
-        mask = (torch.rand(X.shape) <
-                p_miss).double()  # 缺失位置为1，非缺失位置0；实际上是真正mask矩阵的求反
+        mask = (torch.rand(X.shape) < p_miss).double()
 
-    X_nas = X.clone()  # 创建一个新的张量，与赋值操作不一样
-    X_nas[mask.bool()] = np.nan  # 将mask中对应为True的位置设置为np.nan
-
-    return {
-        'X_init': X.double(),
-        'X_incomp': X_nas.double(),
-        'mask': mask
-    }  # 原始数据矩阵，不完整矩阵，mask矩阵，这里的原始数据矩阵和不完整矩阵都是归一化的
+    X_nas = X.clone()
+    X_nas[mask.bool()] = np.nan
+    return {'X_init': X.double(), 'X_incomp': X_nas.double(), 'mask': mask}
 
 
 def generate_missing(data, miss_ratio):
@@ -123,12 +117,10 @@ def generate_dataset(data, index):
     print("valid data shape: ", valid_data.shape)
     print("test data shape: ", test_data.shape)
 
-    # 生成缺失数据及mask矩阵
     train_set, train_mask = generate_missing(train_data, miss_ratio)
     valid_set, valid_mask = generate_missing(valid_data, miss_ratio)
     test_set, test_mask = generate_missing(test_data, miss_ratio)
 
-    # 数据集保存
     train_dict, valid_dict, test_dict = {}, {}, {}
     train_dict['data'], train_dict['mask'], train_dict[
         'target'] = train_set, train_mask, train_data
@@ -142,18 +134,15 @@ def generate_dataset(data, index):
         os.makedirs(output_dir)
     with open(
             output_dir + "train_{0}_ms{1}_seqlen_{2}.pkl".format(
-                miss_mechanism, miss_ratio, seqlen),
-            "wb") as f:  # 保存训练集的缺失数据和mask矩阵，这里的数据集划分是按顺序的，没有shuffle
+                miss_mechanism, miss_ratio, seqlen), "wb") as f:
         pickle.dump(train_dict, f)
     with open(
             output_dir + "valid_{0}_ms{1}_seqlen_{2}.pkl".format(
-                miss_mechanism, miss_ratio, seqlen),
-            "wb") as f:  # 保存验证集的缺失数据和mask矩阵，这里的数据集划分是按顺序的，没有shuffle
+                miss_mechanism, miss_ratio, seqlen), "wb") as f:
         pickle.dump(valid_dict, f)
     with open(
             output_dir + "test_{0}_ms{1}_seqlen_{2}.pkl".format(
-                miss_mechanism, miss_ratio, seqlen),
-            "wb") as f:  # 保存测试集的缺失数据和mask矩阵，这里的数据集划分是按顺序的，没有shuffle
+                miss_mechanism, miss_ratio, seqlen), "wb") as f:
         pickle.dump(test_dict, f)
 
 

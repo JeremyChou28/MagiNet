@@ -53,7 +53,6 @@ def standard_transform(data: np.array,
 
 
 def generate_dataset(data, seqlen, mode):
-    # 执行sliding window获取批量样本
     l, _, f = data.shape
     train_nums = round(l * train_ratio)
     valid_nums = round(l * valid_ratio)
@@ -65,18 +64,18 @@ def generate_dataset(data, seqlen, mode):
     if mode == "overlap":
         train_data_index = []
         for t in range(seqlen, train_nums + 1):
-            index = (t - seqlen, t)  # 记录序列初始位置，结束位置
+            index = (t - seqlen, t)
             train_data_index.append(index)
 
         valid_data_index = []
         for t in range(train_nums + seqlen, train_nums + valid_nums + 1):
-            index = (t - seqlen, t)  # 记录序列初始位置，结束位置
+            index = (t - seqlen, t)
             valid_data_index.append(index)
 
         test_data_index = []
         for t in range(train_nums + valid_nums + seqlen,
                        train_nums + valid_nums + test_nums):
-            index = (t - seqlen, t)  # 记录序列初始位置，结束位置
+            index = (t - seqlen, t)
             test_data_index.append(index)
     else:
         train_num_segments = train_nums // seqlen
@@ -110,13 +109,11 @@ def generate_dataset(data, seqlen, mode):
     index['valid'] = valid_data_index
     index['test'] = test_data_index
 
-    data_norm = standard_transform(data, output_dir, train_data_index,
-                                   seqlen)  # 规范化，服从标准正态分布
+    data_norm = standard_transform(data, output_dir, train_data_index, seqlen)
 
-    with open(output_dir + "/data.pkl", "wb") as f:  # 保存处理后的数据
+    with open(output_dir + "/data.pkl", "wb") as f:
         pickle.dump(data_norm, f)
-    with open(output_dir + "/index_{}.pkl".format(seqlen),
-              "wb") as f:  # 保存划分数据集的index
+    with open(output_dir + "/index_{}.pkl".format(seqlen), "wb") as f:
         pickle.dump(index, f)
     # return train_data_index,valid_data_index,test_data_index
 
@@ -141,8 +138,7 @@ if __name__ == "__main__":
         graph_file_path = "../BasicTS/datasets/raw_data/{0}/adj_{0}.pkl".format(
             DATASET_NAME)
         if DATASET_NAME == 'PEMS-BAY':
-            data = data[:51840, :,
-                        target_channel]  # 51840=288*180，原始为52116=288*180+12*23
+            data = data[:51840, :, target_channel]  # 51840=288*180
         else:
             data = data[..., target_channel]
     elif DATASET_NAME == 'seattle':
