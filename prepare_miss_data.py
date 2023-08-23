@@ -44,6 +44,7 @@ miss_ratio = args.miss_ratio
 mnar_opt = args.opt
 mnar_p_obs = args.p_obs
 mnar_q = args.q
+seqlen = args.seqlen
 
 
 def seed_torch(seed=0):
@@ -95,7 +96,9 @@ def generate_missing(data, miss_ratio):
     return np.array(X_miss), np.array(M_miss)
 
 
-def generate_dataset(data, index):
+def generate_dataset(dataset, data, index):
+    add_position_encoding(dataset, data, add_time_in_week=True, seqlen=seqlen)
+
     train_index, valid_index, test_index = index['train'], index[
         'valid'], index['test']
     train_data, valid_data, test_data = [], [], []  # B,N,F
@@ -128,7 +131,7 @@ def generate_dataset(data, index):
     test_dict['data'], test_dict['mask'], test_dict[
         'target'] = test_set, test_mask, test_data
 
-    output_dir = dataset + "/processed/{0}/".format(miss_mechanism)
+    output_dir = "datasets/{}/processed/{}/".format(dataset, miss_mechanism)
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     with open(
@@ -167,13 +170,33 @@ def load_pkl(pickle_file: str) -> object:
     return pickle_data
 
 
+def add_position_encoding(dataset, data, add_time_in_week, seqlen):
+    num_nodes = data.shape[1]
+    print('num nodes:', num_nodes)
+    if add_time_in_week:
+        # numerical time_in_week
+        if seqlen == 12:
+            time_inw = [i % 2016 / 2016 for i in range(data.shape[0])]
+        elif seqlen == 6:
+            time_inw = [i % 1008 / 1008 for i in range(data.shape[0])]
+        else:
+            assert 'seqlen must be 6 or 12!'
+        time_inw = np.array(time_inw)
+        time_in_week = np.tile(time_inw[:, np.newaxis, np.newaxis],
+                               [1, num_nodes, 1])
+    newdata = np.concatenate((data, time_in_week), axis=-1)
+    with open('datasets/{}/data_pos.pkl'.format(dataset), 'wb') as fb:
+        pickle.dump(newdata, fb)
+
+
 if __name__ == "__main__":
     print("=" * 50, "Processing", dataset, miss_mechanism, "=" * 50)
     start_time = time.time()
 
-    data = load_pkl(dataset + '/processed/data.pkl')
-    index = load_pkl(dataset + '/processed/index_{}.pkl'.format(args.seqlen))
+    data = load_pkl('datasets/{}/processed/data.pkl'.format(dataset))
+    index = load_pkl('datasets/{}/processed/index_{}.pkl'.format(
+        dataset, seqlen))
 
-    generate_dataset(data, index)
+    generate_dataset(dataset, data, index)
     print('spend_time: {:.2f}'.format(time.time() - start_time))
     print("=" * 50, "Processing Finished", "=" * 50)

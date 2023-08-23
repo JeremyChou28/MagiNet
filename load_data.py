@@ -7,21 +7,21 @@ from torch.utils.data import TensorDataset
 from torch.utils.data import DataLoader
 
 
-def load_data(datapath, dataset, miss_mechanism, miss_ratio, seqlen):
+def load_data(dataset, miss_mechanism, miss_ratio, seqlen):
     '''
     read traffic data: 
     '''
     # get adjacency matrix
-    with open(datapath + "/{}/adj_mx.pkl".format(dataset), 'rb') as fb:
+    with open("datasets/{}/adj_mx.pkl".format(dataset), 'rb') as fb:
         A = pk.load(fb).astype(np.float32)
     # get normalization metric: mean, std
-    with open(datapath + "/{}/processed/normalization.pkl".format(dataset),
+    with open("datasets/{}/processed/normalization.pkl".format(dataset),
               'rb') as fb:
         mean, std = pk.load(fb)['args'].values()
 
     # train
     with open(
-            datapath + "/{}/processed/{}/train_{}_ms{}_seqlen_{}.pkl".format(
+            "datasets/{}/processed/{}/train_{}_ms{}_seqlen_{}.pkl".format(
                 dataset, miss_mechanism, miss_mechanism, miss_ratio, seqlen),
             'rb') as fb:
         train_data = pk.load(fb)
@@ -35,7 +35,7 @@ def load_data(datapath, dataset, miss_mechanism, miss_ratio, seqlen):
 
     # valid
     with open(
-            datapath + "/{}/processed/{}/valid_{}_ms{}_seqlen_{}.pkl".format(
+            "datasets/{}/processed/{}/valid_{}_ms{}_seqlen_{}.pkl".format(
                 dataset, miss_mechanism, miss_mechanism, miss_ratio, seqlen),
             'rb') as fb:
         valid_data = pk.load(fb)
@@ -49,7 +49,7 @@ def load_data(datapath, dataset, miss_mechanism, miss_ratio, seqlen):
 
     # test
     with open(
-            datapath + "/{}/processed/{}/test_{}_ms{}_seqlen_{}.pkl".format(
+            "datasets/{}/processed/{}/test_{}_ms{}_seqlen_{}.pkl".format(
                 dataset, miss_mechanism, miss_mechanism, miss_ratio, seqlen),
             'rb') as fb:
         test_data = pk.load(fb)
@@ -64,10 +64,10 @@ def load_data(datapath, dataset, miss_mechanism, miss_ratio, seqlen):
     return train_X, train_M, train_Y, valid_X, valid_M, valid_Y, test_X, test_M, test_Y, A, mean, std
 
 
-def generate_miss_loader(datapath, dataset, miss_mechanism, miss_ratio, seqlen,
-                         batch_size):
+def generate_miss_loader(dataset, miss_mechanism, miss_ratio, seqlen,
+                         batch_size,val_batch_size,test_batch_size):
     # split to train,valid,test
-    with open(datapath + "/{}/processed/index_{}.pkl".format(dataset, seqlen),
+    with open("datasets/{}/processed/index_{}.pkl".format(dataset, seqlen),
               'rb') as fb:
         index = pk.load(fb)
 
@@ -87,10 +87,10 @@ def generate_miss_loader(datapath, dataset, miss_mechanism, miss_ratio, seqlen,
     data = {}
 
     train_X, train_M, train_Y, valid_X, valid_M, valid_Y, test_X, test_M, test_Y, A, mean, std = load_data(
-        datapath, dataset, miss_mechanism, miss_ratio, seqlen)
+        dataset, miss_mechanism, miss_ratio, seqlen)
 
     # get data with position information
-    with open(datapath + "/{0}/data_pos.pkl".format(dataset), 'rb') as fb:
+    with open("datasets/{}/data_pos.pkl".format(dataset), 'rb') as fb:
         datapos = pk.load(fb)
 
     # train
@@ -132,7 +132,7 @@ def generate_miss_loader(datapath, dataset, miss_mechanism, miss_ratio, seqlen,
     train_loader = DataLoader(train_dataset,
                               batch_size=batch_size,
                               shuffle=True)
-    valid_loader = DataLoader(valid_dataset, batch_size=batch_size)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size)
+    valid_loader = DataLoader(valid_dataset, batch_size=val_batch_size)
+    test_loader = DataLoader(test_dataset, batch_size=test_batch_size)
 
     return train_loader, valid_loader, test_loader, mean, std, A
