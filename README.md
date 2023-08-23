@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 ## Datasets
 
-1. Download the raw dataset (link will be open source soon)
+1. Download the raw dataset and push them into direction 'datasets/' (link will be open source soon)
 
    - PEMS-BAY
    - METR-LA
