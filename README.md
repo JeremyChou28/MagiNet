@@ -22,13 +22,12 @@ pip install -r requirements.txt
 
    ```shell
    python prepare_split_data.py --dataset='METR-LA'
-   
+
    python prepare_miss_data.py --dataset='METR-LA' --miss_mechanism='MCAR' --miss_ratio=0.5 --seqlen=12
    ```
 
 ## How to run
 
 ```
-python main.py --dataset='METR-LA'
+python main.py --config_path='configs/METR-LA.yaml' --seed=0
 ```
-
