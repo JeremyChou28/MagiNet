@@ -218,7 +218,6 @@ def batch_cosine_similarity(x, y):
     ) + 1e-7  # avoid 0, l2 norm, num_heads x batch_size x hidden_dim==>num_heads x batch_size
     l2_m = torch.matmul(l2_x.unsqueeze(dim=2),
                         l2_y.unsqueeze(dim=2).transpose(1, 2))
-    # 计算分子
     l2_z = torch.matmul(x, y.transpose(1, 2))
     # cos similarity affinity matrix
     cos_affnity = l2_z / l2_m
@@ -230,3 +229,75 @@ def batch_dot_similarity(x, y):
     QKT = torch.bmm(x, y.transpose(-1, -2)) / math.sqrt(x.shape[2])
     W = torch.softmax(QKT, dim=-1)
     return W
+
+
+def read_pkl(pklfile):
+    with open(pklfile, 'rb') as fb:
+        data = pkl.load(fb)
+        fb.close()
+    return data
+
+
+def save_to_pkl(variable, pklfile):
+    with open(pklfile, 'wb') as fb:
+        pkl.dump(variable, fb)
+        fb.close()
+
+
+class EarlyStopping:
+    """Early stops the training if validation loss doesn't improve after a given patience."""
+
+    def __init__(self, save_path, patience=7, verbose=False, delta=0):
+        """
+        Args:
+            save_path : 
+            patience (int): How long to wait after last time validation loss improved.
+                            Default: 7
+            verbose (bool): If True, prints a message for each validation loss improvement. 
+                            Default: False
+            delta (float): Minimum change in the monitored quantity to qualify as an improvement.
+                            Default: 0
+        """
+        self.save_path = save_path
+        self.patience = patience
+        self.verbose = verbose
+        self.counter = 0
+        self.best_score = None
+        self.early_stop = False
+        self.val_loss_min = np.Inf
+        self.delta = delta
+
+    def __call__(self, val_loss, miss_ratio, generator, discriminator):
+
+        score = -val_loss
+
+        if self.best_score is None:
+            self.best_score = score
+            self.save_checkpoint(val_loss, miss_ratio, generator,
+                                 discriminator)
+        elif score < self.best_score + self.delta:
+            self.counter += 1
+            print(
+                f'EarlyStopping counter: {self.counter} out of {self.patience}'
+            )
+            if self.counter >= self.patience:
+                self.early_stop = True
+        else:
+            self.best_score = score
+            self.save_checkpoint(val_loss, miss_ratio, generator,
+                                 discriminator)
+            self.counter = 0
+
+    def save_checkpoint(self, val_loss, miss_ratio, generator, discriminator):
+        '''Saves model when validation loss decrease.'''
+        if self.verbose:
+            print(
+                f'Validation loss decreased ({self.val_loss_min:.6f} --> {val_loss:.6f}).  Saving model ...'
+            )
+        generator_path = os.path.join(self.save_path,
+                                      'generator_ms{0}.pth'.format(miss_ratio))
+        discriminator_path = os.path.join(
+            self.save_path, 'discriminator_ms{0}.pth'.format(miss_ratio))
+        torch.save(generator.state_dict(), generator_path)
+        torch.save(discriminator.state_dict(), discriminator_path)
+        self.val_loss_min = val_loss
