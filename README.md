@@ -1,3 +1,10 @@
+<!--
+ * @Description:
+ * @Author: Jianping Zhou
+ * @Email: jianpingzhou0927@gmail.com
+ * @Date: 2024-05-03 10:52:37
+-->
+
 # MagiNet
 
 It's a pytorch implementation of paper "MagiNet: Mask-Aware Graph Imputation Networkfor Missing Spatio-temporal Data".
@@ -10,7 +17,7 @@ pip install -r requirements.txt
 
 ## Datasets
 
-1. Download the raw datasets and push them into directory 'datasets/' (link will be open source soon)
+1. Download the raw datasets and push them into directory 'datasets/' ([download dataset](https://drive.google.com/file/d/1qsT0gnTc0MmNaisLh9xpqVcvT2CEPnu0/view?usp=sharing))
 
    - PEMS-BAY
    - METR-LA
