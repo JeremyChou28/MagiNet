@@ -1,12 +1,14 @@
 import os
+import sys
 import torch
-import pickle
 import numpy as np
+import pickle as pk
 import scipy.sparse as sp
 from scipy.sparse import linalg
 import pandas as pd
 from scipy.sparse.linalg import eigs
 import math
+import logging
 
 
 def missed_eval_torch(predict, true, mask):
@@ -37,6 +39,28 @@ def missed_eval_np(predict, true, mask):
 
 def unnormalization(data, mean, std):
     return data * std + mean
+
+
+def load_pkl(pickle_file: str) -> object:
+    """Load pickle data.
+
+    Args:
+        pickle_file (str): file path
+
+    Returns:
+        object: loaded objected
+    """
+
+    try:
+        with open(pickle_file, "rb") as f:
+            pickle_data = pickle.load(f)
+    except UnicodeDecodeError:
+        with open(pickle_file, "rb") as f:
+            pickle_data = pickle.load(f, encoding="latin1")
+    except Exception as e:
+        print("Unable to load data ", pickle_file, ":", e)
+        raise
+    return pickle_data
 
 
 def sym_adj(adj):
@@ -88,6 +112,20 @@ def calculate_scaled_laplacian(adj_mx, lambda_max=2, undirected=True):
     I = sp.identity(M, format='csr', dtype=L.dtype)
     L = (2 / lambda_max * L) - I
     return L.astype(np.float32).todense()
+
+
+def calculate_random_walk_matrix(adj_mx):
+    adj_mx = sp.coo_matrix(adj_mx)
+    d = np.array(adj_mx.sum(1))
+    d_inv = np.power(d, -1).flatten()
+    d_inv[np.isinf(d_inv)] = 0.
+    d_mat_inv = sp.diags(d_inv)
+    random_walk_mx = d_mat_inv.dot(adj_mx).tocoo()
+    return random_walk_mx
+
+
+def calculate_reverse_random_walk_matrix(adj_mx):
+    return calculate_random_walk_matrix(np.transpose(adj_mx))
 
 
 def load_graph_missdata(adj_mx, adjtype):
@@ -233,71 +271,89 @@ def batch_dot_similarity(x, y):
 
 def read_pkl(pklfile):
     with open(pklfile, 'rb') as fb:
-        data = pkl.load(fb)
+        data = pk.load(fb)
         fb.close()
     return data
 
 
 def save_to_pkl(variable, pklfile):
     with open(pklfile, 'wb') as fb:
-        pkl.dump(variable, fb)
+        pk.dump(variable, fb)
         fb.close()
 
 
-class EarlyStopping:
-    """Early stops the training if validation loss doesn't improve after a given patience."""
+def get_normalized_adj(A):
+    """
+    Returns the degree normalized adjacency matrix.
+    """
+    A = A + np.diag(np.ones(A.shape[0], dtype=np.float32))
+    D = np.array(np.sum(A, axis=1)).reshape((-1, ))
+    D[D <= 10e-5] = 10e-5  # Prevent infs
+    diag = np.reciprocal(np.sqrt(D))
+    A_wave = np.multiply(np.multiply(diag.reshape((-1, 1)), A),
+                         diag.reshape((1, -1)))
+    return A_wave
 
-    def __init__(self, save_path, patience=7, verbose=False, delta=0):
-        """
-        Args:
-            save_path : 
-            patience (int): How long to wait after last time validation loss improved.
-                            Default: 7
-            verbose (bool): If True, prints a message for each validation loss improvement. 
-                            Default: False
-            delta (float): Minimum change in the monitored quantity to qualify as an improvement.
-                            Default: 0
-        """
-        self.save_path = save_path
-        self.patience = patience
-        self.verbose = verbose
-        self.counter = 0
-        self.best_score = None
-        self.early_stop = False
-        self.val_loss_min = np.Inf
-        self.delta = delta
 
-    def __call__(self, val_loss, miss_ratio, generator, discriminator):
+def get_logger(log_dir, name, log_filename='info.log', level=logging.INFO):
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    # Add file handler and stdout handler
+    formatter = logging.Formatter(
+        '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler = logging.FileHandler(os.path.join(log_dir, log_filename))
+    file_handler.setFormatter(formatter)
+    # Add console handler.
+    console_formatter = logging.Formatter(
+        '%(asctime)s - %(levelname)s - %(message)s')
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setFormatter(console_formatter)
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+    # Add google cloud log handler
+    logger.info('Log directory: %s', log_dir)
+    return logger
 
-        score = -val_loss
+def get_randmask(observed_mask, min_miss_ratio=0., max_miss_ratio=1.):
+    rand_for_mask = torch.rand_like(observed_mask) * observed_mask
+    rand_for_mask = rand_for_mask.reshape(-1)
+    sample_ratio = np.random.rand()
+    sample_ratio = sample_ratio * (max_miss_ratio-min_miss_ratio) + min_miss_ratio
+    num_observed = observed_mask.sum().item()
+    num_masked = round(num_observed * sample_ratio)
+    rand_for_mask[rand_for_mask.topk(num_masked).indices] = -1
 
-        if self.best_score is None:
-            self.best_score = score
-            self.save_checkpoint(val_loss, miss_ratio, generator,
-                                 discriminator)
-        elif score < self.best_score + self.delta:
-            self.counter += 1
-            print(
-                f'EarlyStopping counter: {self.counter} out of {self.patience}'
-            )
-            if self.counter >= self.patience:
-                self.early_stop = True
-        else:
-            self.best_score = score
-            self.save_checkpoint(val_loss, miss_ratio, generator,
-                                 discriminator)
-            self.counter = 0
+    cond_mask = (rand_for_mask > 0).reshape(observed_mask.shape).float()
+    return cond_mask
 
-    def save_checkpoint(self, val_loss, miss_ratio, generator, discriminator):
-        '''Saves model when validation loss decrease.'''
-        if self.verbose:
-            print(
-                f'Validation loss decreased ({self.val_loss_min:.6f} --> {val_loss:.6f}).  Saving model ...'
-            )
-        generator_path = os.path.join(self.save_path,
-                                      'generator_ms{0}.pth'.format(miss_ratio))
-        discriminator_path = os.path.join(
-            self.save_path, 'discriminator_ms{0}.pth'.format(miss_ratio))
-        torch.save(generator.state_dict(), generator_path)
-        torch.save(discriminator.state_dict(), discriminator_path)
-        self.val_loss_min = val_loss
+def get_block_mask(observed_mask, target_strategy='block'):
+    rand_sensor_mask = torch.rand_like(observed_mask)
+    randint = np.random.randint
+    sample_ratio = np.random.rand()
+    sample_ratio = sample_ratio * 0.15
+    mask = rand_sensor_mask < sample_ratio
+    min_seq = 12
+    max_seq = 24
+    for col in range(observed_mask.shape[1]):
+        idxs = np.flatnonzero(mask[:, col])
+        if not len(idxs):
+            continue
+        fault_len = min_seq
+        if max_seq > min_seq:
+            fault_len = fault_len + int(randint(max_seq - min_seq))
+        idxs_ext = np.concatenate([np.arange(i, i + fault_len) for i in idxs])
+        idxs = np.unique(idxs_ext)
+        idxs = np.clip(idxs, 0, observed_mask.shape[0] - 1)
+        mask[idxs, col] = True
+    rand_base_mask = torch.rand_like(observed_mask) < 0.05
+    reverse_mask = mask | rand_base_mask
+    block_mask = 1 - reverse_mask.to(torch.float32)
+
+    cond_mask = observed_mask.clone()
+    mask_choice = np.random.rand()
+    if target_strategy == "hybrid" and mask_choice > 0.7:
+        cond_mask = get_randmask(observed_mask, 0., 1.)
+    else:
+        cond_mask = block_mask * cond_mask
+
+    return cond_mask

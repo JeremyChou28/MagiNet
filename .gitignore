@@ -1,5 +1,7 @@
 __pycache__/
 baselines/
+baselines_results/
+baselines_save_model/
 wandb/
 results/
 save_model/
@@ -9,4 +11,6 @@ datasets/Shenzhen/
 datasets/PEMS-BAY/
 datasets/METR-LA/
 datasets/Seattle/
+archive/
 main.ipynb
+main_test.py

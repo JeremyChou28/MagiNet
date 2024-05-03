@@ -238,6 +238,7 @@ def main():
 
     dataset = config['data']['dataset']
     miss_mechanism = config['data']['miss_mechanism']
+    miss_pattern = config['data']['miss_pattern']
     miss_ratio = float(config['data']['miss_ratio'])
     batch_size = int(config['data']['batch_size'])
     val_batch_size = int(config['data']['val_batch_size'])
@@ -263,7 +264,7 @@ def main():
     torch.set_num_threads(10)
 
     train_loader, valid_loader, test_loader, mean, std, A = generate_miss_loader(
-        dataset, miss_mechanism, miss_ratio, seqlen, batch_size,
+        dataset, miss_mechanism, miss_pattern,miss_ratio, seqlen, batch_size,
         val_batch_size, test_batch_size)
 
     wandb.init(project="MagiNet",

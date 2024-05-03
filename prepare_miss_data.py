@@ -79,6 +79,8 @@ def produce_NA(X, p_miss, mecha="MCAR", opt=None, p_obs=None, q=None):
     return {'X_init': X.double(), 'X_incomp': X_nas.double(), 'mask': mask}
 
 
+
+
 def generate_missing(data, miss_ratio):
     seed_torch(0)
     n_masks = data.shape[0]  # batch_size
@@ -87,6 +89,7 @@ def generate_missing(data, miss_ratio):
         produce_NA(data[i], miss_ratio, miss_mechanism, mnar_opt, mnar_p_obs,
                    mnar_q) for i in range(n_masks)
     ]
+
     X_miss = []
     M_miss = []
     for missdata in missdata_list:
