@@ -1,9 +1,10 @@
-'''
+"""
 Description: 
 Author: Jianping Zhou
 Email: jianpingzhou0927@gmail.com
 Date: 2023-08-23 17:56:01
-'''
+"""
+
 import os
 import random
 import numpy as np
@@ -25,10 +26,9 @@ from models.model import *
 from load_data import *
 
 parser = argparse.ArgumentParser()
-parser.add_argument("--config_path",
-                    type=str,
-                    default='configs/METR-LA.yaml',
-                    help="config filepath")
+parser.add_argument(
+    "--config_path", type=str, default="configs/METR-LA.yaml", help="config filepath"
+)
 parser.add_argument("--seed", type=int, default=0, help="random seed")
 args = parser.parse_args()
 
@@ -36,7 +36,7 @@ args = parser.parse_args()
 def seed_torch(seed=0):
     random.seed(seed)
     np.random.seed(seed)
-    os.environ['PYTHONHASHSEED'] = str(seed)
+    os.environ["PYTHONHASHSEED"] = str(seed)
     torch.manual_seed(seed)
     torch.cuda.manual_seed(seed)
     torch.backends.cudnn.deterministic = True
@@ -62,8 +62,7 @@ class Learnable_Missing_Encoding(nn.Module):
         missed_token = self.mask_token.expand(B, N, D, L) * (1 - mask)
 
         learnable_input_emb = observed_token + missed_token
-        learnable_input_emb = learnable_input_emb.transpose(-1,
-                                                            -2)  # (B,N,L,D)
+        learnable_input_emb = learnable_input_emb.transpose(-1, -2)  # (B,N,L,D)
         return learnable_input_emb
 
 
@@ -73,8 +72,7 @@ class Temporal_Positional_Embedding(nn.Module):
         super(Temporal_Positional_Embedding, self).__init__()
         self.max_len = max_len
         self.hidden_dim = hidden_dim
-        self.pe = nn.Parameter(torch.empty(max_len, hidden_dim),
-                               requires_grad=True)
+        self.pe = nn.Parameter(torch.empty(max_len, hidden_dim), requires_grad=True)
         self.dropout = nn.Dropout(p=dropout)
         nn.init.uniform_(self.pe, -0.02, 0.02)
 
@@ -103,17 +101,16 @@ class Adaptive_Missing_Spatial_Temporal_Encoder(nn.Module):
         self.in_channel = in_channel
         self.hidden_dim = hidden_dim
 
-        self.observation_encoding = nn.Conv2d(in_channel,
-                                              hidden_dim,
-                                              kernel_size=(1, 1),
-                                              stride=(1, 1))
+        self.observation_encoding = nn.Conv2d(
+            in_channel, hidden_dim, kernel_size=(1, 1), stride=(1, 1)
+        )
         self.maskemb = Learnable_Missing_Encoding(hidden_dim)
         self.posemb = Temporal_Positional_Embedding(hidden_dim)
 
     def forward(self, x, m):
         if self.pe_learnable:
             position = x[:, :, 1, :].unsqueeze(-2)
-        x = x[:, :, :self.in_channel, :]
+        x = x[:, :, : self.in_channel, :]
         B, N, F_in, L = x.shape  # B,N,F,L
 
         input = x.unsqueeze(-1)  # B, N, F, L, 1
@@ -121,31 +118,33 @@ class Adaptive_Missing_Spatial_Temporal_Encoder(nn.Module):
 
         # learnable missing encoding
         input_emb = self.observation_encoding(input)  # B*N,  d, L, 1
-        input_emb = input_emb.squeeze(-1).view(B, N, self.hidden_dim,
-                                               -1)  # B,N,d,L
+        input_emb = input_emb.squeeze(-1).view(B, N, self.hidden_dim, -1)  # B,N,d,L
         Learnable_Missing_Encoding = self.maskemb(input_emb, m)  # B,N,L,D
 
         # temporal positional embedding
-        H = self.posemb(Learnable_Missing_Encoding,
-                        position.view(B * N, L, -1).long())  # B,N,L,D
+        H = self.posemb(
+            Learnable_Missing_Encoding, position.view(B * N, L, -1).long()
+        )  # B,N,L,D
         return H
 
 
 class MagiNet(nn.Module):
 
-    def __init__(self,
-                 device,
-                 num_nodes,
-                 seqlen,
-                 in_channels,
-                 hidden_dim,
-                 st_block,
-                 K,
-                 n_heads,
-                 d_model,
-                 adj_mx,
-                 learnable=True,
-                 pe_learnable=True):
+    def __init__(
+        self,
+        device,
+        num_nodes,
+        seqlen,
+        in_channels,
+        hidden_dim,
+        st_block,
+        K,
+        n_heads,
+        d_model,
+        adj_mx,
+        learnable=True,
+        pe_learnable=True,
+    ):
         super(MagiNet, self).__init__()
 
         self.num_nodes = num_nodes
@@ -154,21 +153,24 @@ class MagiNet(nn.Module):
         self.hidden_dim = hidden_dim
 
         self.AMSTenc = Adaptive_Missing_Spatial_Temporal_Encoder(
-            in_channels, hidden_dim, learnable=True, pe_learnable=True)
+            in_channels, hidden_dim, learnable=True, pe_learnable=True
+        )
 
-        self.MASTdec = make_model(DEVICE=device,
-                                  st_block=st_block,
-                                  in_channels=in_channels,
-                                  K=K,
-                                  nb_chev_filter=hidden_dim,
-                                  nb_time_filter=hidden_dim,
-                                  adj_mx=adj_mx,
-                                  num_of_timesteps=seqlen,
-                                  num_of_nodes=num_nodes,
-                                  d_model=d_model,
-                                  d_k=32,
-                                  d_v=32,
-                                  n_heads=n_heads)
+        self.MASTdec = make_model(
+            DEVICE=device,
+            st_block=st_block,
+            in_channels=in_channels,
+            K=K,
+            nb_chev_filter=hidden_dim,
+            nb_time_filter=hidden_dim,
+            adj_mx=adj_mx,
+            num_of_timesteps=seqlen,
+            num_of_nodes=num_nodes,
+            d_model=d_model,
+            d_k=32,
+            d_v=32,
+            n_heads=n_heads,
+        )
 
     def forward(self, x, m):
 
@@ -181,8 +183,19 @@ class MagiNet(nn.Module):
         return output  # (B,N,1,L)
 
 
-def predict(model, device, best_save_path, result_path, test_loader, mean, std,
-            dataset, miss_ratio, seed):
+def predict(
+    model,
+    device,
+    best_save_path,
+    result_path,
+    test_loader,
+    mean,
+    std,
+    dataset,
+    miss_ratio,
+    miss_mechanism,
+    seed,
+):
     model.load_state_dict(torch.load(best_save_path))
     # test
     test_maes, test_rmses, test_mapes = [], [], []
@@ -196,14 +209,14 @@ def predict(model, device, best_save_path, result_path, test_loader, mean, std,
             m = m.to(device)  # (B,N,2,L)
             y = y[:, :, :1, :].detach().cpu().numpy()
             x_hat = model(x, m).detach().cpu().numpy()
-            unnorm_x = unnormalization(x[:, :, :1, :].detach().cpu().numpy(),
-                                       mean, std)
+            unnorm_x = unnormalization(x[:, :, :1, :].detach().cpu().numpy(), mean, std)
             unnorm_x_hat = unnormalization(x_hat, mean, std)
             unnorm_y = unnormalization(y, mean, std)
             mask = m.detach().cpu().numpy()
             mae, rmse, mape = missed_eval_np(unnorm_x_hat, unnorm_y, mask)
-            predict_data = unnorm_x_hat * (
-                1 - mask[:, :, :1, :]) + unnorm_x * mask[:, :, :1, :]
+            predict_data = (
+                unnorm_x_hat * (1 - mask[:, :, :1, :]) + unnorm_x * mask[:, :, :1, :]
+            )
             unnorm_x = np.where(mask[:, :, :1, :] == 0, np.nan, unnorm_x)
             miss_data.append(unnorm_x)
             predict_results.append(predict_data)
@@ -214,20 +227,26 @@ def predict(model, device, best_save_path, result_path, test_loader, mean, std,
         test_mae = np.mean(test_maes)
         test_rmse = np.mean(test_rmses)
         test_mape = np.mean(test_mapes)
-    print("Test result: MAE {} RMSE {} MAPE {}".format(test_mae, test_rmse,
-                                                       test_mape * 100))
+    print(
+        "Test result: MAE {} RMSE {} MAPE {}".format(
+            test_mae, test_rmse, test_mape * 100
+        )
+    )
     result = {}
-    result['missed_data'] = np.concatenate(miss_data, axis=0)  # B,N,1,L
-    result['imputed_data'] = np.concatenate(predict_results, axis=0)  # B,N,1,L
-    result['groundtruth'] = np.concatenate(groundtruths, axis=0)  # B,N,1,L
-    print(result['missed_data'].shape)
-    print(result['imputed_data'].shape)
-    print(result['groundtruth'].shape)
-    result_path = result_path + '{}/'.format(dataset)
+    result["missed_data"] = np.concatenate(miss_data, axis=0)  # B,N,1,L
+    result["imputed_data"] = np.concatenate(predict_results, axis=0)  # B,N,1,L
+    result["groundtruth"] = np.concatenate(groundtruths, axis=0)  # B,N,1,L
+    print(result["missed_data"].shape)
+    print(result["imputed_data"].shape)
+    print(result["groundtruth"].shape)
+    result_path = result_path + "{}/".format(dataset)
     if not os.path.exists(result_path):
         os.makedirs(result_path)
-    with open(result_path + 'result_ms{}_seed{}.pkl'.format(miss_ratio, seed),
-              'wb') as fb:
+    with open(
+        result_path
+        + "result_{}_ms{}_seed{}.pkl".format(miss_mechanism, miss_ratio, seed),
+        "wb",
+    ) as fb:
         pk.dump(result, fb)
 
 
@@ -235,54 +254,70 @@ def main():
     config_filename = args.config_path
     with open(config_filename) as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
+    print(config)
 
-    dataset = config['data']['dataset']
-    miss_mechanism = config['data']['miss_mechanism']
-    miss_pattern = config['data']['miss_pattern']
-    miss_ratio = float(config['data']['miss_ratio'])
-    batch_size = int(config['data']['batch_size'])
-    val_batch_size = int(config['data']['val_batch_size'])
-    test_batch_size = int(config['data']['test_batch_size'])
-    seqlen = int(config['model']['seqlen'])
-    num_nodes = int(config['model']['num_nodes'])
-    st_block = int(config['model']['st_block'])
-    in_channel = int(config['model']['in_channel'])
-    hidden_size = int(config['model']['hidden_size'])
-    K = int(config['model']['K'])
-    d_model = int(config['model']['d_model'])
-    n_heads = int(config['model']['n_heads'])
-    epochs = int(config['train']['epochs'])
-    lr = float(config['train']['lr'])
-    save_path = config['train']['save_model_path']
-    result_path = config['train']['result_path']
+    dataset = config["data"]["dataset"]
+    miss_mechanism = config["data"]["miss_mechanism"]
+    # miss_pattern = config["data"]["miss_pattern"]
+    miss_ratio = float(config["data"]["miss_ratio"])
+    batch_size = int(config["data"]["batch_size"])
+    val_batch_size = int(config["data"]["val_batch_size"])
+    test_batch_size = int(config["data"]["test_batch_size"])
+    seqlen = int(config["model"]["seqlen"])
+    num_nodes = int(config["model"]["num_nodes"])
+    st_block = int(config["model"]["st_block"])
+    in_channel = int(config["model"]["in_channel"])
+    hidden_size = int(config["model"]["hidden_size"])
+    K = int(config["model"]["K"])
+    d_model = int(config["model"]["d_model"])
+    n_heads = int(config["model"]["n_heads"])
+    epochs = int(config["train"]["epochs"])
+    lr = float(config["train"]["lr"])
+    save_path = config["train"]["save_model_path"]
+    result_path = config["train"]["result_path"]
     seed = args.seed
 
-    device = torch.device('cuda:{}'.format(int(config['train']['cuda']))
-                          if torch.cuda.is_available() else "cpu")
+    device = torch.device(
+        "cuda:{}".format(int(config["train"]["cuda"]))
+        if torch.cuda.is_available()
+        else "cpu"
+    )
 
     seed_torch(seed)
     torch.set_num_threads(10)
 
     train_loader, valid_loader, test_loader, mean, std, A = generate_miss_loader(
-        dataset, miss_mechanism, miss_pattern,miss_ratio, seqlen, batch_size,
-        val_batch_size, test_batch_size)
+        dataset,
+        miss_mechanism,
+        # miss_pattern,
+        miss_ratio,
+        seqlen,
+        batch_size,
+        val_batch_size,
+        test_batch_size,
+    )
 
-    wandb.init(project="MagiNet",
-               name="{}_lr{}_hiddensize{}_batchsize{}_seed{}".format(
-                   dataset, lr, hidden_size, batch_size, seed))
+    # wandb.init(
+    #     project="MagiNet",
+    #     name="{}_lr{}_hiddensize{}_batchsize{}_seed{}".format(
+    #         dataset, lr, hidden_size, batch_size, seed
+    #     ),
+    # )
 
     adj_mx = weight_matrix(A)
 
-    model = MagiNet(device=device,
-                    num_nodes=num_nodes,
-                    seqlen=seqlen,
-                    in_channels=in_channel,
-                    hidden_dim=hidden_size,
-                    st_block=st_block,
-                    K=K,
-                    d_model=d_model,
-                    n_heads=n_heads,
-                    adj_mx=adj_mx).to(device)
+    model = MagiNet(
+        device=device,
+        num_nodes=num_nodes,
+        seqlen=seqlen,
+        in_channels=in_channel,
+        hidden_dim=hidden_size,
+        st_block=st_block,
+        K=K,
+        d_model=d_model,
+        n_heads=n_heads,
+        adj_mx=adj_mx,
+    ).to(device)
     loss_function = nn.SmoothL1Loss()
     optimizer = optim.Adam(model.parameters(), lr=lr)
 
@@ -326,29 +361,47 @@ def main():
             if valid_mae < best_val_mae:
                 patience = 0
                 best_val_mae = valid_mae
-                if not os.path.exists(save_path + '{}'.format(dataset)):
-                    os.makedirs(save_path + '{}'.format(dataset))
-                best_save_path = save_path + '{}'.format(
-                    dataset) + '/best_model_ms{}_seed{}.pth'.format(
-                        miss_ratio, seed)
+                if not os.path.exists(save_path + "{}".format(dataset)):
+                    os.makedirs(save_path + "{}".format(dataset))
+                best_save_path = (
+                    save_path
+                    + "{}".format(dataset)
+                    + "/best_model_{}_ms{}_seed{}.pth".format(
+                        miss_mechanism, miss_ratio, seed
+                    )
+                )
                 torch.save(model.state_dict(), best_save_path)
             # else:
             #     patience += 1
             #     if patience > 20:
             #         print("Early Stop!")
             #         break
-        wandb.log({"train loss": loss.item(), "valid loss": valid_mae})
-        print('Epoch [{}/{}] : '.format(epoch, epochs), 'loss = ',
-              np.mean(loss_epoch),
-              "epoch_time: {}".format(time.time() - epoch_time))
-    wandb.finish()
+        # wandb.log({"train loss": loss.item(), "valid loss": valid_mae})
+        print(
+            "Epoch [{}/{}] : ".format(epoch, epochs),
+            "loss = ",
+            np.mean(loss_epoch),
+            "epoch_time: {}".format(time.time() - epoch_time),
+        )
+    # wandb.finish()
 
     # test
-    predict(model, device, best_save_path, result_path, test_loader, mean, std,
-            dataset, miss_ratio, seed)
+    predict(
+        model,
+        device,
+        best_save_path,
+        result_path,
+        test_loader,
+        mean,
+        std,
+        dataset,
+        miss_ratio,
+        miss_mechanism,
+        seed,
+    )
 
 
 if __name__ == "__main__":
     start_time = time.time()
     main()
-    print('Spend Time: {}'.format(time.time() - start_time))
+    print("Spend Time: {}".format(time.time() - start_time))

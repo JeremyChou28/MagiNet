@@ -1,8 +1,8 @@
 data:
   dataset: "METR-LA"
-  miss_mechanism: "MCAR"
-  miss_pattern: "block"
-  miss_ratio: 0.0015
+  miss_mechanism: "MAR"
+  # miss_pattern: "block"
+  miss_ratio: 0.5
   batch_size: 16
   test_batch_size: 16
   val_batch_size: 16
@@ -18,7 +18,7 @@ model:
   n_heads: 3
 
 train:
-  cuda: 0
+  cuda: 1
   lr: 1e-3
   epochs: 150
   save_model_path: save_model/

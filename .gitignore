@@ -14,3 +14,6 @@ datasets/Seattle/
 archive/
 main.ipynb
 main_test.py
+
+logs/
+scripts/baselines/
