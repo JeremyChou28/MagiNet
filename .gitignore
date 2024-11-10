@@ -15,5 +15,5 @@ archive/
 main.ipynb
 main_test.py
 
-scripts/baselines/
 configs/MNAR/
+configs/MAR/
