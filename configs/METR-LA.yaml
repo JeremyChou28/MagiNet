@@ -1,6 +1,6 @@
 data:
   dataset: "METR-LA"
-  miss_mechanism: "MAR"
+  miss_mechanism: "MCAR"
   # miss_pattern: "block"
   miss_ratio: 0.5
   batch_size: 16

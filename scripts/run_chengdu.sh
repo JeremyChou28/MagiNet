@@ -6,7 +6,7 @@
 ### 
 
 # MAR
-log_path="./logs/Chengdu/MNAR"
+log_path="./logs/Chengdu/MAR"
 
 if [ ! -d "$log_path" ]; then
     mkdir -p "$log_path"
@@ -15,11 +15,11 @@ else
     echo "Folder already exists: $log_path"
 fi
 
-for ((i=2021; i<=2023; i++))
+for ((i=2022; i<=2023; i++))
 do
   seed=$i
   nohup python -u main.py \
-  --config_path "configs/MNAR/Chengdu.yaml" \
+  --config_path "configs/MAR/Chengdu.yaml" \
   --seed $seed > ${log_path}/$seed.log 2>&1 &
   wait
 done
