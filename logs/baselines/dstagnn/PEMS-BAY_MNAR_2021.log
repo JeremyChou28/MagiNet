@@ -2,28 +2,163 @@ Read configuration file: baselines/dstagnn_modules/configurations/PEMS-BAY.conf
 CUDA: cuda:1
 folder_dir: dstagnn_0.50
 params_path: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50
-create params directory baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50
+delete the old one and create params directory baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50
 current epoch:  0
 validation batch 1 / 14, val_mae: 1.85
 val mae 2.0309520959854126
 best epoch:  0
 best val mae:  2.0309520959854126
 save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
-Traceback (most recent call last):
-  File "dstagnn.py", line 248, in <module>
-    train_main()
-  File "dstagnn.py", line 196, in train_main
-    outputs = net(encoder_inputs)
-  File "/home/zhoujianping/miniconda3/envs/torch3090/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/home/zhoujianping/Research/MagiNet/baselines/dstagnn_modules/model.py", line 490, in forward
-    x, res_att = block(x, res_att)
-  File "/home/zhoujianping/miniconda3/envs/torch3090/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/home/zhoujianping/Research/MagiNet/baselines/dstagnn_modules/model.py", line 404, in forward
-    spatial_gcn = self.cheb_conv_SAt(x, STAt,
-  File "/home/zhoujianping/miniconda3/envs/torch3090/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
-    result = self.forward(*input, **kwargs)
-  File "/home/zhoujianping/Research/MagiNet/baselines/dstagnn_modules/model.py", line 204, in forward
-    T_k_with_at = T_k.mul(
-RuntimeError: CUDA out of memory. Tried to allocate 14.00 MiB (GPU 1; 23.69 GiB total capacity; 5.93 GiB already allocated; 12.06 MiB free; 6.25 GiB reserved in total by PyTorch)
+current epoch:  1
+validation batch 1 / 14, val_mae: 0.15
+val mae 0.20192788328443254
+best epoch:  1
+best val mae:  0.20192788328443254
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  2
+validation batch 1 / 14, val_mae: 0.15
+val mae 0.1942754206912858
+best epoch:  2
+best val mae:  0.1942754206912858
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  3
+validation batch 1 / 14, val_mae: 0.15
+val mae 0.18600254825183324
+best epoch:  3
+best val mae:  0.18600254825183324
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  4
+validation batch 1 / 14, val_mae: 0.19
+val mae 0.2196549688066755
+current epoch:  5
+validation batch 1 / 14, val_mae: 0.15
+val mae 0.1763895313654627
+best epoch:  5
+best val mae:  0.1763895313654627
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  6
+validation batch 1 / 14, val_mae: 0.13
+val mae 0.16458679416349956
+best epoch:  6
+best val mae:  0.16458679416349956
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  7
+validation batch 1 / 14, val_mae: 0.12
+val mae 0.152799554169178
+best epoch:  7
+best val mae:  0.152799554169178
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  8
+validation batch 1 / 14, val_mae: 0.13
+val mae 0.15924162630523955
+current epoch:  9
+validation batch 1 / 14, val_mae: 0.11
+val mae 0.14159095979162625
+best epoch:  9
+best val mae:  0.14159095979162625
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  10
+validation batch 1 / 14, val_mae: 0.12
+val mae 0.1492830706494195
+global step: 1000, training loss: 0.02, time: 465.80s
+current epoch:  11
+validation batch 1 / 14, val_mae: 0.13
+val mae 0.15492628514766693
+current epoch:  12
+validation batch 1 / 14, val_mae: 0.12
+val mae 0.14699968110237802
+current epoch:  13
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.1296632992369788
+best epoch:  13
+best val mae:  0.1296632992369788
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  14
+validation batch 1 / 14, val_mae: 0.15
+val mae 0.17036198931080954
+current epoch:  15
+validation batch 1 / 14, val_mae: 0.11
+val mae 0.13495025411248207
+current epoch:  16
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12841709330677986
+best epoch:  16
+best val mae:  0.12841709330677986
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  17
+validation batch 1 / 14, val_mae: 0.09
+val mae 0.12267379888466426
+best epoch:  17
+best val mae:  0.12267379888466426
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  18
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.1268418819776603
+current epoch:  19
+validation batch 1 / 14, val_mae: 0.11
+val mae 0.13449197901146753
+current epoch:  20
+validation batch 1 / 14, val_mae: 0.11
+val mae 0.1391188262828759
+current epoch:  21
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.1253970361181668
+global step: 2000, training loss: 0.01, time: 930.04s
+current epoch:  22
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12634111727987016
+current epoch:  23
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12842270306178502
+current epoch:  24
+validation batch 1 / 14, val_mae: 0.11
+val mae 0.13063242552535875
+current epoch:  25
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12549510225653648
+current epoch:  26
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12138284689613751
+best epoch:  26
+best val mae:  0.12138284689613751
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  27
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12104456339563642
+best epoch:  27
+best val mae:  0.12104456339563642
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  28
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12929395639470645
+current epoch:  29
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.1258117130824498
+current epoch:  30
+validation batch 1 / 14, val_mae: 0.09
+val mae 0.11895837794457163
+best epoch:  30
+best val mae:  0.11895837794457163
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  31
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12170278440628733
+global step: 3000, training loss: 0.01, time: 1401.94s
+current epoch:  32
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12528899045927183
+current epoch:  33
+validation batch 1 / 14, val_mae: 0.10
+val mae 0.12261298937456948
+current epoch:  34
+validation batch 1 / 14, val_mae: 0.09
+val mae 0.11587402916380338
+best epoch:  34
+best val mae:  0.11587402916380338
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+current epoch:  35
+validation batch 1 / 14, val_mae: 0.09
+val mae 0.11493655666708946
+best epoch:  35
+best val mae:  0.11493655666708946
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params

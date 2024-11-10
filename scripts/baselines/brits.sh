@@ -52,6 +52,7 @@ do
   seed=$i
   nohup python -u brits.py \
   --dataset-name $dataset \
+  --config ./baselines/grin_modules/config/brits/${dataset}.yaml \
   --miss_mechanism $miss_mechanism \
   --cuda $cuda \
   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
@@ -66,6 +67,7 @@ do
   seed=$i
   nohup python -u brits.py \
   --dataset-name $dataset \
+  --config ./baselines/grin_modules/config/brits/${dataset}.yaml \
   --miss_mechanism $miss_mechanism \
   --cuda $cuda \
   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
@@ -122,6 +124,7 @@ do
   seed=$i
   nohup python -u brits.py \
   --dataset-name $dataset \
+  --config ./baselines/grin_modules/config/brits/${dataset}.yaml \
   --miss_mechanism $miss_mechanism \
   --cuda $cuda \
   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
@@ -136,6 +139,7 @@ do
   seed=$i
   nohup python -u brits.py \
   --dataset-name $dataset \
+  --config ./baselines/grin_modules/config/brits/${dataset}.yaml \
   --miss_mechanism $miss_mechanism \
   --cuda $cuda \
   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &

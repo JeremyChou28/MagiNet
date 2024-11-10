@@ -14,10 +14,80 @@ else
     echo "Folder already exists: $log_path"
 fi
 
-cuda=0
+cuda=3
 miss_mechanism="MAR"
 
 # MAR
+# dataset="METR-LA"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u d2stgnn.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+# dataset="Seattle"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u d2stgnn.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+
+# dataset="Chengdu"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u d2stgnn.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+
+# dataset="Shenzhen"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u d2stgnn.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+dataset="PEMS-BAY"
+
+for ((i=2021; i<=2023; i++))
+do
+  seed=$i
+  nohup python -u d2stgnn.py \
+  --dataset $dataset \
+  --miss_mechanism $miss_mechanism \
+  --cuda $cuda \
+  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+  wait
+done
+
+
+# miss_mechanism="MNAR"
+# MNAR
 # dataset="METR-LA"
 
 # for ((i=2021; i<=2023; i++))
@@ -84,73 +154,3 @@ miss_mechanism="MAR"
 #   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
 #   wait
 # done
-
-
-miss_mechanism="MNAR"
-# MNAR
-# dataset="METR-LA"
-
-# for ((i=2021; i<=2023; i++))
-# do
-#   seed=$i
-#   nohup python -u d2stgnn.py \
-#   --dataset $dataset \
-#   --miss_mechanism $miss_mechanism \
-#   --cuda $cuda \
-#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-#   wait
-# done
-
-dataset="Seattle"
-
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u d2stgnn.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
-
-
-dataset="Chengdu"
-
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u d2stgnn.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
-
-
-dataset="Shenzhen"
-
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u d2stgnn.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
-
-dataset="PEMS-BAY"
-
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u d2stgnn.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done

@@ -14,11 +14,11 @@ else
     echo "Folder already exists: $log_path"
 fi
 
-cuda=2
+cuda=3
+miss_mechanism="MAR"
 
 # # MAR
 # dataset="METR-LA"
-# miss_mechanism="MAR"
 
 # for ((i=2021; i<=2023; i++))
 # do
@@ -52,6 +52,7 @@ cuda=2
 #   seed=$i
 #   nohup python -u grin.py \
 #   --dataset-name $dataset \
+#   --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
 #   --miss_mechanism $miss_mechanism \
 #   --cuda $cuda \
 #   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
@@ -66,6 +67,7 @@ cuda=2
 #   seed=$i
 #   nohup python -u grin.py \
 #   --dataset-name $dataset \
+#   --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
 #   --miss_mechanism $miss_mechanism \
 #   --cuda $cuda \
 #   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
@@ -115,42 +117,44 @@ miss_mechanism="MNAR"
 # done
 
 
-# dataset="Chengdu"
-
-# for ((i=2021; i<=2023; i++))
-# do
-#   seed=$i
-#   nohup python -u grin.py \
-#   --dataset-name $dataset \
-#   --miss_mechanism $miss_mechanism \
-#   --cuda $cuda \
-#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-#   wait
-# done
-
-
-# dataset="Shenzhen"
-
-# for ((i=2021; i<=2023; i++))
-# do
-#   seed=$i
-#   nohup python -u grin.py \
-#   --dataset-name $dataset \
-#   --miss_mechanism $miss_mechanism \
-#   --cuda $cuda \
-#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-#   wait
-# done
-
-dataset="PEMS-BAY"
+dataset="Chengdu"
 
 for ((i=2021; i<=2023; i++))
 do
   seed=$i
   nohup python -u grin.py \
   --dataset-name $dataset \
+  --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
   --miss_mechanism $miss_mechanism \
   --cuda $cuda \
   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
   wait
 done
+
+
+dataset="Shenzhen"
+
+for ((i=2021; i<=2023; i++))
+do
+  seed=$i
+  nohup python -u grin.py \
+  --dataset-name $dataset \
+  --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
+  --miss_mechanism $miss_mechanism \
+  --cuda $cuda \
+  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+  wait
+done
+
+# dataset="PEMS-BAY"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u grin.py \
+#   --dataset-name $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done

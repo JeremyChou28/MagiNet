@@ -14,22 +14,22 @@ else
     echo "Folder already exists: $log_path"
 fi
 
-cuda=1
+cuda=2
 config="baselines/dstagnn_modules/configurations"
 
-# MAR
-dataset="METR-LA"
 miss_mechanism="MAR"
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u dstagnn.py \
-  --config $config/${dataset}.conf \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# # MAR
+# dataset="METR-LA"
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u dstagnn.py \
+#   --config $config/${dataset}.conf \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 dataset="Seattle"
 
@@ -45,61 +45,61 @@ do
 done
 
 
-dataset="Chengdu"
+# dataset="Chengdu"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u dstagnn.py \
-  --config $config/${dataset}.conf \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
-
-
-dataset="Shenzhen"
-
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u dstagnn.py \
-  --config $config/${dataset}.conf \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
-
-dataset="PEMS-BAY"
-
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u dstagnn.py \
-  --config $config/${dataset}.conf \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u dstagnn.py \
+#   --config $config/${dataset}.conf \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 
-# MNAR
-dataset="METR-LA"
+# dataset="Shenzhen"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u dstagnn.py \
+#   --config $config/${dataset}.conf \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+# dataset="PEMS-BAY"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u dstagnn.py \
+#   --config $config/${dataset}.conf \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+
 miss_mechanism="MNAR"
+# # MNAR
+# dataset="METR-LA"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u dstagnn.py \
-  --config $config/${dataset}.conf \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u dstagnn.py \
+#   --config $config/${dataset}.conf \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 dataset="Seattle"
 
@@ -115,42 +115,42 @@ do
 done
 
 
-dataset="Chengdu"
+# dataset="Chengdu"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u dstagnn.py \
-  --config $config/${dataset}.conf \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u dstagnn.py \
+#   --config $config/${dataset}.conf \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 
-dataset="Shenzhen"
+# dataset="Shenzhen"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u dstagnn.py \
-  --config $config/${dataset}.conf \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u dstagnn.py \
+#   --config $config/${dataset}.conf \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
-dataset="PEMS-BAY"
+# dataset="PEMS-BAY"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u dstagnn.py \
-  --config $config/${dataset}.conf \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u dstagnn.py \
+#   --config $config/${dataset}.conf \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done

@@ -15,34 +15,34 @@ else
 fi
 
 cuda=0
-
-# MAR
-dataset="METR-LA"
 miss_mechanism="MAR"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u graphwavenet.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# MAR
+# dataset="METR-LA"
 
-dataset="Seattle"
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u graphwavenet.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u graphwavenet.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# dataset="Seattle"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u graphwavenet.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 
 dataset="Chengdu"
@@ -52,6 +52,7 @@ do
   seed=$i
   nohup python -u graphwavenet.py \
   --dataset $dataset \
+  --seq_length 6 \
   --miss_mechanism $miss_mechanism \
   --device $cuda \
   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
@@ -66,53 +67,54 @@ do
   seed=$i
   nohup python -u graphwavenet.py \
   --dataset $dataset \
+  --seq_length 6 \
   --miss_mechanism $miss_mechanism \
   --device $cuda \
   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
   wait
 done
 
-dataset="PEMS-BAY"
+# dataset="PEMS-BAY"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u graphwavenet.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u graphwavenet.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
-
-# MNAR
-dataset="METR-LA"
 miss_mechanism="MNAR"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u graphwavenet.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# MNAR
+# dataset="METR-LA"
 
-dataset="Seattle"
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u graphwavenet.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u graphwavenet.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# dataset="Seattle"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u graphwavenet.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 
 dataset="Chengdu"
@@ -122,6 +124,7 @@ do
   seed=$i
   nohup python -u graphwavenet.py \
   --dataset $dataset \
+  --seq_length 6 \
   --miss_mechanism $miss_mechanism \
   --device $cuda \
   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
@@ -136,21 +139,22 @@ do
   seed=$i
   nohup python -u graphwavenet.py \
   --dataset $dataset \
+  --seq_length 6 \
   --miss_mechanism $miss_mechanism \
   --device $cuda \
   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
   wait
 done
 
-dataset="PEMS-BAY"
+# dataset="PEMS-BAY"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u graphwavenet.py \
-  --dataset $dataset \
-  --miss_mechanism $miss_mechanism \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u graphwavenet.py \
+#   --dataset $dataset \
+#   --miss_mechanism $miss_mechanism \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
