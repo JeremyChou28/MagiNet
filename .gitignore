@@ -1,5 +1,5 @@
 __pycache__/
-baselines/
+/baselines/
 baselines_results/
 baselines_save_model/
 wandb/

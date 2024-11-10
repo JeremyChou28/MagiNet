@@ -1,0 +1,599 @@
+epoch:0
+iter0: train_loss:1.187374234199524
+iter10: train_loss:0.34994685649871826
+iter20: train_loss:0.27317479252815247
+iter30: train_loss:0.22543534636497498
+iter40: train_loss:0.20907281339168549
+iter50: train_loss:0.1523614376783371
+iter60: train_loss:0.17846980690956116
+iter70: train_loss:0.18647748231887817
+iter80: train_loss:0.13307279348373413
+iter90: train_loss:0.13733959197998047
+iter100: train_loss:0.13224956393241882
+iter110: train_loss:0.14542274177074432
+iter120: train_loss:0.12016622722148895
+Validation loss: 0.16991365832440994 Validation RMSE: 0.4119282066822052
+====================================================================================================
+epoch:1
+iter0: train_loss:0.1004871129989624
+iter10: train_loss:0.13821697235107422
+iter20: train_loss:0.11416737735271454
+iter30: train_loss:0.11636810004711151
+iter40: train_loss:0.09904474765062332
+iter50: train_loss:0.11432117223739624
+iter60: train_loss:0.11069995909929276
+iter70: train_loss:0.09690739214420319
+iter80: train_loss:0.11030344665050507
+iter90: train_loss:0.10052653402090073
+iter100: train_loss:0.09234125167131424
+iter110: train_loss:0.08627243340015411
+iter120: train_loss:0.0970219150185585
+Validation loss: 0.1439847262466655 Validation RMSE: 0.3792781321441426
+====================================================================================================
+epoch:2
+iter0: train_loss:0.10609252005815506
+iter10: train_loss:0.09786250442266464
+iter20: train_loss:0.09421826153993607
+iter30: train_loss:0.10775098204612732
+iter40: train_loss:0.08930965512990952
+iter50: train_loss:0.083583764731884
+iter60: train_loss:0.09156735241413116
+iter70: train_loss:0.08324730396270752
+iter80: train_loss:0.10479643195867538
+iter90: train_loss:0.09862828254699707
+iter100: train_loss:0.07877640426158905
+iter110: train_loss:0.09080909192562103
+iter120: train_loss:0.09703782945871353
+Validation loss: 0.14253913392038906 Validation RMSE: 0.37736503867542043
+====================================================================================================
+epoch:3
+iter0: train_loss:0.09566087275743484
+iter10: train_loss:0.07909543067216873
+iter20: train_loss:0.08660612255334854
+iter30: train_loss:0.08952696621417999
+iter40: train_loss:0.09177695959806442
+iter50: train_loss:0.0810764953494072
+iter60: train_loss:0.08614114671945572
+iter70: train_loss:0.07590300589799881
+iter80: train_loss:0.0738680362701416
+iter90: train_loss:0.1075567752122879
+iter100: train_loss:0.08027642220258713
+iter110: train_loss:0.078823983669281
+iter120: train_loss:0.07796931266784668
+Validation loss: 0.13838371240040837 Validation RMSE: 0.3716661456753226
+====================================================================================================
+epoch:4
+iter0: train_loss:0.0734240934252739
+iter10: train_loss:0.07115258276462555
+iter20: train_loss:0.07677321881055832
+iter30: train_loss:0.059170886874198914
+iter40: train_loss:0.08045565336942673
+iter50: train_loss:0.07146665453910828
+iter60: train_loss:0.08117380738258362
+iter70: train_loss:0.07987649738788605
+iter80: train_loss:0.08722390979528427
+iter90: train_loss:0.07412698119878769
+iter100: train_loss:0.07675148546695709
+iter110: train_loss:0.07776891440153122
+iter120: train_loss:0.0831642597913742
+Validation loss: 0.12999547272920609 Validation RMSE: 0.3603440803640029
+====================================================================================================
+epoch:5
+iter0: train_loss:0.07419256865978241
+iter10: train_loss:0.07036586850881577
+iter20: train_loss:0.09151261299848557
+iter30: train_loss:0.0822557806968689
+iter40: train_loss:0.07133752852678299
+iter50: train_loss:0.07663562893867493
+iter60: train_loss:0.074194997549057
+iter70: train_loss:0.08091163635253906
+iter80: train_loss:0.07552232593297958
+iter90: train_loss:0.07500745356082916
+iter100: train_loss:0.07221294939517975
+iter110: train_loss:0.0769025906920433
+iter120: train_loss:0.07281028479337692
+Validation loss: 0.1368644399678006 Validation RMSE: 0.3697444638785194
+EarlyStopping counter: 1 out of 7
+====================================================================================================
+epoch:6
+iter0: train_loss:0.0772811770439148
+iter10: train_loss:0.0833820179104805
+iter20: train_loss:0.08223036676645279
+iter30: train_loss:0.07244352996349335
+iter40: train_loss:0.06933609396219254
+iter50: train_loss:0.07358309626579285
+iter60: train_loss:0.07561425864696503
+iter70: train_loss:0.07830322533845901
+iter80: train_loss:0.07513841986656189
+iter90: train_loss:0.06459826231002808
+iter100: train_loss:0.06460817903280258
+iter110: train_loss:0.06818738579750061
+iter120: train_loss:0.07267919927835464
+Validation loss: 0.12139546169954188 Validation RMSE: 0.3482300183352302
+====================================================================================================
+epoch:7
+iter0: train_loss:0.07560012489557266
+iter10: train_loss:0.07132887095212936
+iter20: train_loss:0.07111677527427673
+iter30: train_loss:0.06427375972270966
+iter40: train_loss:0.06625348329544067
+iter50: train_loss:0.0835784450173378
+iter60: train_loss:0.06619435548782349
+iter70: train_loss:0.0734952762722969
+iter80: train_loss:0.07136762142181396
+iter90: train_loss:0.06775680929422379
+iter100: train_loss:0.0758611410856247
+iter110: train_loss:0.06791508942842484
+iter120: train_loss:0.06335310637950897
+Validation loss: 0.12450491461683721 Validation RMSE: 0.3527400826706606
+EarlyStopping counter: 1 out of 7
+====================================================================================================
+epoch:8
+iter0: train_loss:0.07631471753120422
+iter10: train_loss:0.06961289048194885
+iter20: train_loss:0.0588558129966259
+iter30: train_loss:0.06822161376476288
+iter40: train_loss:0.07117216289043427
+iter50: train_loss:0.07482955604791641
+iter60: train_loss:0.06923934072256088
+iter70: train_loss:0.0756380632519722
+iter80: train_loss:0.07047411799430847
+iter90: train_loss:0.07010591775178909
+iter100: train_loss:0.07329946756362915
+iter110: train_loss:0.07264743000268936
+iter120: train_loss:0.06568142771720886
+Validation loss: 0.1200206161421888 Validation RMSE: 0.3462911441045649
+====================================================================================================
+epoch:9
+iter0: train_loss:0.07333651930093765
+iter10: train_loss:0.0581284761428833
+iter20: train_loss:0.07111845165491104
+iter30: train_loss:0.06194804608821869
+iter40: train_loss:0.07222387939691544
+iter50: train_loss:0.06673618406057358
+iter60: train_loss:0.06695294380187988
+iter70: train_loss:0.06810534000396729
+iter80: train_loss:0.06897906213998795
+iter90: train_loss:0.08636019378900528
+iter100: train_loss:0.07772139459848404
+iter110: train_loss:0.07990069687366486
+iter120: train_loss:0.06364582479000092
+Validation loss: 0.12441847254248227 Validation RMSE: 0.3525404614560744
+EarlyStopping counter: 1 out of 7
+====================================================================================================
+epoch:10
+iter0: train_loss:0.07245057821273804
+iter10: train_loss:0.06763115525245667
+iter20: train_loss:0.06550686061382294
+iter30: train_loss:0.06079389527440071
+iter40: train_loss:0.06953530013561249
+iter50: train_loss:0.06965180486440659
+iter60: train_loss:0.06516526639461517
+iter70: train_loss:0.06805417686700821
+iter80: train_loss:0.06861656904220581
+iter90: train_loss:0.06837133318185806
+iter100: train_loss:0.06062997132539749
+iter110: train_loss:0.06705865263938904
+iter120: train_loss:0.06846693158149719
+Validation loss: 0.12042773032889646 Validation RMSE: 0.3468716810731327
+EarlyStopping counter: 2 out of 7
+====================================================================================================
+epoch:11
+iter0: train_loss:0.06335530430078506
+iter10: train_loss:0.06022917479276657
+iter20: train_loss:0.06192759424448013
+iter30: train_loss:0.06468982249498367
+iter40: train_loss:0.07048823684453964
+iter50: train_loss:0.060527291148900986
+iter60: train_loss:0.06307851523160934
+iter70: train_loss:0.06889034062623978
+iter80: train_loss:0.06204405799508095
+iter90: train_loss:0.07233147323131561
+iter100: train_loss:0.061072878539562225
+iter110: train_loss:0.06401531398296356
+iter120: train_loss:0.0634431391954422
+Validation loss: 0.11471645183422986 Validation RMSE: 0.33843737665344686
+====================================================================================================
+epoch:12
+iter0: train_loss:0.06259214878082275
+iter10: train_loss:0.06073286011815071
+iter20: train_loss:0.06632649898529053
+iter30: train_loss:0.06466896831989288
+iter40: train_loss:0.057620804756879807
+iter50: train_loss:0.06118646264076233
+iter60: train_loss:0.0630706325173378
+iter70: train_loss:0.06307165324687958
+iter80: train_loss:0.054730795323848724
+iter90: train_loss:0.07350558787584305
+iter100: train_loss:0.055244673043489456
+iter110: train_loss:0.06451678276062012
+iter120: train_loss:0.058885518461465836
+Validation loss: 0.11690761893987656 Validation RMSE: 0.341668097411885
+EarlyStopping counter: 1 out of 7
+====================================================================================================
+epoch:13
+iter0: train_loss:0.0585966520011425
+iter10: train_loss:0.06281782686710358
+iter20: train_loss:0.05942743644118309
+iter30: train_loss:0.06557539105415344
+iter40: train_loss:0.05683080479502678
+iter50: train_loss:0.05248275399208069
+iter60: train_loss:0.05692790821194649
+iter70: train_loss:0.05736638233065605
+iter80: train_loss:0.06446664035320282
+iter90: train_loss:0.06274871528148651
+iter100: train_loss:0.06152818351984024
+iter110: train_loss:0.0541439950466156
+iter120: train_loss:0.0645962655544281
+Validation loss: 0.11792578329058255 Validation RMSE: 0.3432233982226428
+EarlyStopping counter: 2 out of 7
+====================================================================================================
+epoch:14
+iter0: train_loss:0.06348046660423279
+iter10: train_loss:0.05700384080410004
+iter20: train_loss:0.050693463534116745
+iter30: train_loss:0.06504750996828079
+iter40: train_loss:0.06417547911405563
+iter50: train_loss:0.06252118945121765
+iter60: train_loss:0.05969700217247009
+iter70: train_loss:0.06651348620653152
+iter80: train_loss:0.05220684036612511
+iter90: train_loss:0.05381309613585472
+iter100: train_loss:0.05722298473119736
+iter110: train_loss:0.06357666850090027
+iter120: train_loss:0.05382722616195679
+Validation loss: 0.11266397597158656 Validation RMSE: 0.3355407609659083
+====================================================================================================
+epoch:15
+iter0: train_loss:0.0708029642701149
+iter10: train_loss:0.057771820574998856
+iter20: train_loss:0.05937889963388443
+iter30: train_loss:0.06348954886198044
+iter40: train_loss:0.06062738597393036
+iter50: train_loss:0.06621606647968292
+iter60: train_loss:0.06247768551111221
+iter70: train_loss:0.05434568226337433
+iter80: train_loss:0.05342002958059311
+iter90: train_loss:0.061774831265211105
+iter100: train_loss:0.05675867944955826
+iter110: train_loss:0.05819254368543625
+iter120: train_loss:0.05908609554171562
+Validation loss: 0.1157497351660448 Validation RMSE: 0.34005117942305174
+EarlyStopping counter: 1 out of 7
+====================================================================================================
+epoch:16
+iter0: train_loss:0.06107861176133156
+iter10: train_loss:0.05987357348203659
+iter20: train_loss:0.05822398141026497
+iter30: train_loss:0.0520327165722847
+iter40: train_loss:0.06716207414865494
+iter50: train_loss:0.05642053484916687
+iter60: train_loss:0.06594990193843842
+iter70: train_loss:0.05898395553231239
+iter80: train_loss:0.06138010695576668
+iter90: train_loss:0.05725473538041115
+iter100: train_loss:0.06454004347324371
+iter110: train_loss:0.052448809146881104
+iter120: train_loss:0.06726594269275665
+Validation loss: 0.1134443791473613 Validation RMSE: 0.33664921802632947
+EarlyStopping counter: 2 out of 7
+====================================================================================================
+epoch:17
+iter0: train_loss:0.05786922946572304
+iter10: train_loss:0.05599699541926384
+iter20: train_loss:0.05962511897087097
+iter30: train_loss:0.06197725981473923
+iter40: train_loss:0.05853176862001419
+iter50: train_loss:0.056531086564064026
+iter60: train_loss:0.05291955918073654
+iter70: train_loss:0.05638962611556053
+iter80: train_loss:0.05782351270318031
+iter90: train_loss:0.05383377894759178
+iter100: train_loss:0.05610634759068489
+iter110: train_loss:0.05524175241589546
+iter120: train_loss:0.06154278665781021
+Validation loss: 0.11038997550221051 Validation RMSE: 0.33214212515774894
+====================================================================================================
+epoch:18
+iter0: train_loss:0.05596863478422165
+iter10: train_loss:0.059489186853170395
+iter20: train_loss:0.06457425653934479
+iter30: train_loss:0.05422312393784523
+iter40: train_loss:0.06384210288524628
+iter50: train_loss:0.05251218378543854
+iter60: train_loss:0.06707556545734406
+iter70: train_loss:0.0521208830177784
+iter80: train_loss:0.054144568741321564
+iter90: train_loss:0.05596017837524414
+iter100: train_loss:0.06061428412795067
+iter110: train_loss:0.0523478165268898
+iter120: train_loss:0.05257188901305199
+Validation loss: 0.11140162059489418 Validation RMSE: 0.3336424038690679
+EarlyStopping counter: 1 out of 7
+====================================================================================================
+epoch:19
+iter0: train_loss:0.05848189443349838
+iter10: train_loss:0.06736522167921066
+iter20: train_loss:0.06050582602620125
+iter30: train_loss:0.053779102861881256
+iter40: train_loss:0.061986956745386124
+iter50: train_loss:0.05485119670629501
+iter60: train_loss:0.05777236819267273
+iter70: train_loss:0.05854926258325577
+iter80: train_loss:0.06344684213399887
+iter90: train_loss:0.05588114634156227
+iter100: train_loss:0.05489552393555641
+iter110: train_loss:0.058073077350854874
+iter120: train_loss:0.06194506213068962
+Validation loss: 0.11573618869571124 Validation RMSE: 0.3400205829564263
+EarlyStopping counter: 2 out of 7
+====================================================================================================
+epoch:20
+iter0: train_loss:0.05452924221754074
+iter10: train_loss:0.05594337359070778
+iter20: train_loss:0.0558597669005394
+iter30: train_loss:0.057751208543777466
+iter40: train_loss:0.05814453959465027
+iter50: train_loss:0.061180222779512405
+iter60: train_loss:0.04767152667045593
+iter70: train_loss:0.05810624733567238
+iter80: train_loss:0.06412942707538605
+iter90: train_loss:0.05971919745206833
+iter100: train_loss:0.051934823393821716
+iter110: train_loss:0.05357756465673447
+iter120: train_loss:0.05017400532960892
+Validation loss: 0.10910629305769415 Validation RMSE: 0.3299874996437746
+====================================================================================================
+epoch:21
+iter0: train_loss:0.057638540863990784
+iter10: train_loss:0.0646558329463005
+iter20: train_loss:0.05898672342300415
+iter30: train_loss:0.0464642271399498
+iter40: train_loss:0.05722565948963165
+iter50: train_loss:0.0640954077243805
+iter60: train_loss:0.056974317878484726
+iter70: train_loss:0.0523565374314785
+iter80: train_loss:0.05564737319946289
+iter90: train_loss:0.05051890388131142
+iter100: train_loss:0.06097607687115669
+iter110: train_loss:0.05559904873371124
+iter120: train_loss:0.05255333334207535
+Validation loss: 0.11453398448579452 Validation RMSE: 0.3383171032456791
+EarlyStopping counter: 1 out of 7
+====================================================================================================
+epoch:22
+iter0: train_loss:0.06141326203942299
+iter10: train_loss:0.05183171480894089
+iter20: train_loss:0.05874394252896309
+iter30: train_loss:0.05736560747027397
+iter40: train_loss:0.05311606079339981
+iter50: train_loss:0.05434753745794296
+iter60: train_loss:0.0551244281232357
+iter70: train_loss:0.05667034536600113
+iter80: train_loss:0.06062578409910202
+iter90: train_loss:0.05631594359874725
+iter100: train_loss:0.04521850496530533
+iter110: train_loss:0.05396612733602524
+iter120: train_loss:0.046440187841653824
+Validation loss: 0.11063868771581088 Validation RMSE: 0.3325161285260144
+EarlyStopping counter: 2 out of 7
+====================================================================================================
+epoch:23
+iter0: train_loss:0.05557697266340256
+iter10: train_loss:0.057126689702272415
+iter20: train_loss:0.06279033422470093
+iter30: train_loss:0.05132665857672691
+iter40: train_loss:0.0526462160050869
+iter50: train_loss:0.05794602632522583
+iter60: train_loss:0.05500482767820358
+iter70: train_loss:0.06036138907074928
+iter80: train_loss:0.05932876095175743
+iter90: train_loss:0.05920156091451645
+iter100: train_loss:0.05661008879542351
+iter110: train_loss:0.060173336416482925
+iter120: train_loss:0.05885475128889084
+Validation loss: 0.10969848843181834 Validation RMSE: 0.33087575961561766
+EarlyStopping counter: 3 out of 7
+====================================================================================================
+epoch:24
+iter0: train_loss:0.05558660998940468
+iter10: train_loss:0.051584091037511826
+iter20: train_loss:0.04956425353884697
+iter30: train_loss:0.04686415567994118
+iter40: train_loss:0.05824116989970207
+iter50: train_loss:0.05452347919344902
+iter60: train_loss:0.04604897275567055
+iter70: train_loss:0.04646282643079758
+iter80: train_loss:0.051977235823869705
+iter90: train_loss:0.049454282969236374
+iter100: train_loss:0.057164955884218216
+iter110: train_loss:0.058490920811891556
+iter120: train_loss:0.05788138136267662
+Validation loss: 0.11046098961549647 Validation RMSE: 0.3321601871181937
+EarlyStopping counter: 4 out of 7
+====================================================================================================
+epoch:25
+iter0: train_loss:0.053789205849170685
+iter10: train_loss:0.06302395462989807
+iter20: train_loss:0.05234815925359726
+iter30: train_loss:0.05174820125102997
+iter40: train_loss:0.058546241372823715
+iter50: train_loss:0.05121689289808273
+iter60: train_loss:0.04943937435746193
+iter70: train_loss:0.04441181570291519
+iter80: train_loss:0.05707086622714996
+iter90: train_loss:0.05200611799955368
+iter100: train_loss:0.06544803082942963
+iter110: train_loss:0.05217985063791275
+iter120: train_loss:0.05534982308745384
+Validation loss: 0.10764141819056343 Validation RMSE: 0.3279280539821176
+====================================================================================================
+epoch:26
+iter0: train_loss:0.04925478249788284
+iter10: train_loss:0.05701280012726784
+iter20: train_loss:0.05072148144245148
+iter30: train_loss:0.05357036739587784
+iter40: train_loss:0.05449914187192917
+iter50: train_loss:0.05337367579340935
+iter60: train_loss:0.054894644767045975
+iter70: train_loss:0.05940883234143257
+iter80: train_loss:0.05809454247355461
+iter90: train_loss:0.055006418377161026
+iter100: train_loss:0.056818339973688126
+iter110: train_loss:0.04374714568257332
+iter120: train_loss:0.053906187415122986
+Validation loss: 0.10732727585469976 Validation RMSE: 0.327275391887216
+====================================================================================================
+epoch:27
+iter0: train_loss:0.05109009891748428
+iter10: train_loss:0.06453991681337357
+iter20: train_loss:0.055981237441301346
+iter30: train_loss:0.05464176833629608
+iter40: train_loss:0.054530851542949677
+iter50: train_loss:0.04887374863028526
+iter60: train_loss:0.0523100383579731
+iter70: train_loss:0.05387304723262787
+iter80: train_loss:0.04828399047255516
+iter90: train_loss:0.05893917381763458
+iter100: train_loss:0.050005778670310974
+iter110: train_loss:0.05741613358259201
+iter120: train_loss:0.05081450194120407
+Validation loss: 0.10693407847600825 Validation RMSE: 0.3268277312026304
+====================================================================================================
+epoch:28
+iter0: train_loss:0.05403339862823486
+iter10: train_loss:0.05727544054389
+iter20: train_loss:0.05437357723712921
+iter30: train_loss:0.056132856756448746
+iter40: train_loss:0.048330631107091904
+iter50: train_loss:0.05644148215651512
+iter60: train_loss:0.05491070821881294
+iter70: train_loss:0.052534762769937515
+iter80: train_loss:0.05361645296216011
+iter90: train_loss:0.0507376454770565
+iter100: train_loss:0.047905102372169495
+iter110: train_loss:0.06421416997909546
+iter120: train_loss:0.054986294358968735
+Validation loss: 0.10493301249602262 Validation RMSE: 0.3237333928837496
+====================================================================================================
+epoch:29
+iter0: train_loss:0.04635721817612648
+iter10: train_loss:0.04915841668844223
+iter20: train_loss:0.05093178153038025
+iter30: train_loss:0.05629714950919151
+iter40: train_loss:0.04886942356824875
+iter50: train_loss:0.05411132797598839
+iter60: train_loss:0.04781287536025047
+iter70: train_loss:0.05613192543387413
+iter80: train_loss:0.049528639763593674
+iter90: train_loss:0.05044098570942879
+iter100: train_loss:0.053086817264556885
+iter110: train_loss:0.054988209158182144
+iter120: train_loss:0.05225365236401558
+Validation loss: 0.10545206069946289 Validation RMSE: 0.3245251266395344
+EarlyStopping counter: 1 out of 7
+====================================================================================================
+epoch:30
+iter0: train_loss:0.046142999082803726
+iter10: train_loss:0.052149318158626556
+iter20: train_loss:0.04953522980213165
+iter30: train_loss:0.05397180840373039
+iter40: train_loss:0.05996433645486832
+iter50: train_loss:0.06055455654859543
+iter60: train_loss:0.05575679615139961
+iter70: train_loss:0.05472484976053238
+iter80: train_loss:0.04831817373633385
+iter90: train_loss:0.051612887531518936
+iter100: train_loss:0.053473759442567825
+iter110: train_loss:0.0514758825302124
+iter120: train_loss:0.04671468213200569
+Validation loss: 0.10637648272163727 Validation RMSE: 0.32599054539904876
+EarlyStopping counter: 2 out of 7
+====================================================================================================
+epoch:31
+iter0: train_loss:0.053743407130241394
+iter10: train_loss:0.048568230122327805
+iter20: train_loss:0.04585563391447067
+iter30: train_loss:0.04996675252914429
+iter40: train_loss:0.05731375515460968
+iter50: train_loss:0.044163111597299576
+iter60: train_loss:0.04838143661618233
+iter70: train_loss:0.0594547875225544
+iter80: train_loss:0.04689212143421173
+iter90: train_loss:0.048667535185813904
+iter100: train_loss:0.052680548280477524
+iter110: train_loss:0.047651372849941254
+iter120: train_loss:0.05055524781346321
+Validation loss: 0.10876414486590553 Validation RMSE: 0.32955276264863853
+EarlyStopping counter: 3 out of 7
+====================================================================================================
+epoch:32
+iter0: train_loss:0.04787042737007141
+iter10: train_loss:0.052776187658309937
+iter20: train_loss:0.05202177166938782
+iter30: train_loss:0.04744250327348709
+iter40: train_loss:0.05153627693653107
+iter50: train_loss:0.0543278232216835
+iter60: train_loss:0.04794127494096756
+iter70: train_loss:0.05151786655187607
+iter80: train_loss:0.05345311015844345
+iter90: train_loss:0.053226836025714874
+iter100: train_loss:0.054659292101860046
+iter110: train_loss:0.051233984529972076
+iter120: train_loss:0.052869804203510284
+Validation loss: 0.10687866587849225 Validation RMSE: 0.3267916879233192
+EarlyStopping counter: 4 out of 7
+====================================================================================================
+epoch:33
+iter0: train_loss:0.04797486215829849
+iter10: train_loss:0.051321662962436676
+iter20: train_loss:0.06344910711050034
+iter30: train_loss:0.051077816635370255
+iter40: train_loss:0.05603824928402901
+iter50: train_loss:0.06367386132478714
+iter60: train_loss:0.04874422401189804
+iter70: train_loss:0.04724034294486046
+iter80: train_loss:0.05063733831048012
+iter90: train_loss:0.04946688190102577
+iter100: train_loss:0.05453990772366524
+iter110: train_loss:0.05736220255494118
+iter120: train_loss:0.04795984551310539
+Validation loss: 0.10638077776221667 Validation RMSE: 0.32604672277674956
+EarlyStopping counter: 5 out of 7
+====================================================================================================
+epoch:34
+iter0: train_loss:0.05080033838748932
+iter10: train_loss:0.057183388620615005
+iter20: train_loss:0.04894575476646423
+iter30: train_loss:0.05402948334813118
+iter40: train_loss:0.051098477095365524
+iter50: train_loss:0.04985092952847481
+iter60: train_loss:0.05044202879071236
+iter70: train_loss:0.046023644506931305
+iter80: train_loss:0.05186081305146217
+iter90: train_loss:0.0509524792432785
+iter100: train_loss:0.052985016256570816
+iter110: train_loss:0.052074261009693146
+iter120: train_loss:0.05847882479429245
+Validation loss: 0.10720715014373555 Validation RMSE: 0.3272392942624934
+EarlyStopping counter: 6 out of 7
+====================================================================================================
+epoch:35
+iter0: train_loss:0.05563345551490784
+iter10: train_loss:0.05133948102593422
+iter20: train_loss:0.046919554471969604
+iter30: train_loss:0.04985456168651581
+iter40: train_loss:0.054688677191734314
+iter50: train_loss:0.047073300927877426
+iter60: train_loss:0.05192815884947777
+iter70: train_loss:0.05180161073803902
+iter80: train_loss:0.043364088982343674
+iter90: train_loss:0.05084571987390518
+iter100: train_loss:0.05108656361699104
+iter110: train_loss:0.052939776331186295
+iter120: train_loss:0.05100612714886665
+Validation loss: 0.10494743024601656 Validation RMSE: 0.3237594576442943
+EarlyStopping counter: 7 out of 7
+Early stopping
+MAE: 2.675 RMSE: 3.985 MAPE: 6.458
+Spend Time: 145.08446669578552

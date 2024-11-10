@@ -1,0 +1,141 @@
+Load dataset: 1.54s...
+float64
+Load adjacent matrix: 0.01s...
+Whole trainining iteration is 54
+Current Time: 10-13-39 | Epoch: 001 | Train_Loss: 4.6134 | Train_MAPE: 0.1692 | Train_RMSE: 6.7987 | Valid_Loss: 3.5335 | Valid_RMSE: 5.2856 | Valid_MAPE: 0.1430 | LR: 0.002000
+Current Time: 10-13-39 | Epoch: 002 | Train_Loss: 2.8231 | Train_MAPE: 0.1077 | Train_RMSE: 4.2537 | Valid_Loss: 2.9617 | Valid_RMSE: 4.4920 | Valid_MAPE: 0.1226 | LR: 0.001000
+Current Time: 10-13-39 | Epoch: 003 | Train_Loss: 2.3915 | Train_MAPE: 0.0906 | Train_RMSE: 3.7097 | Valid_Loss: 2.6651 | Valid_RMSE: 4.1144 | Valid_MAPE: 0.1055 | LR: 0.001000
+Current Time: 10-13-39 | Epoch: 004 | Train_Loss: 2.2205 | Train_MAPE: 0.0844 | Train_RMSE: 3.4772 | Valid_Loss: 2.6469 | Valid_RMSE: 4.0085 | Valid_MAPE: 0.1037 | LR: 0.001000
+Current Time: 10-13-39 | Epoch: 005 | Train_Loss: 2.1154 | Train_MAPE: 0.0805 | Train_RMSE: 3.3412 | Valid_Loss: 2.5439 | Valid_RMSE: 3.8566 | Valid_MAPE: 0.1006 | LR: 0.001000
+Current Time: 10-13-40 | Epoch: 006 | Train_Loss: 2.0294 | Train_MAPE: 0.0775 | Train_RMSE: 3.2222 | Valid_Loss: 2.4155 | Valid_RMSE: 3.7012 | Valid_MAPE: 0.0976 | LR: 0.001000
+Current Time: 10-13-40 | Epoch: 007 | Train_Loss: 1.9697 | Train_MAPE: 0.0753 | Train_RMSE: 3.1283 | Valid_Loss: 2.4061 | Valid_RMSE: 3.6196 | Valid_MAPE: 0.0934 | LR: 0.001000
+Current Time: 10-13-40 | Epoch: 008 | Train_Loss: 1.9199 | Train_MAPE: 0.0732 | Train_RMSE: 3.0469 | Valid_Loss: 2.3607 | Valid_RMSE: 3.5376 | Valid_MAPE: 0.0938 | LR: 0.001000
+Current Time: 10-13-40 | Epoch: 009 | Train_Loss: 1.8720 | Train_MAPE: 0.0714 | Train_RMSE: 2.9706 | Valid_Loss: 2.2284 | Valid_RMSE: 3.3972 | Valid_MAPE: 0.0884 | LR: 0.001000
+Current Time: 10-13-40 | Epoch: 010 | Train_Loss: 1.7986 | Train_MAPE: 0.0685 | Train_RMSE: 2.8845 | Valid_Loss: 2.2055 | Valid_RMSE: 3.3468 | Valid_MAPE: 0.0874 | LR: 0.001000
+Current Time: 10-13-40 | Epoch: 011 | Train_Loss: 1.7407 | Train_MAPE: 0.0661 | Train_RMSE: 2.8174 | Valid_Loss: 2.2019 | Valid_RMSE: 3.3495 | Valid_MAPE: 0.0908 | LR: 0.001000
+Current Time: 10-13-41 | Epoch: 012 | Train_Loss: 1.7089 | Train_MAPE: 0.0648 | Train_RMSE: 2.7769 | Valid_Loss: 2.1948 | Valid_RMSE: 3.3090 | Valid_MAPE: 0.0885 | LR: 0.001000
+Current Time: 10-13-41 | Epoch: 013 | Train_Loss: 1.6682 | Train_MAPE: 0.0631 | Train_RMSE: 2.7307 | Valid_Loss: 2.1735 | Valid_RMSE: 3.2782 | Valid_MAPE: 0.0855 | LR: 0.001000
+Current Time: 10-13-41 | Epoch: 014 | Train_Loss: 1.6643 | Train_MAPE: 0.0630 | Train_RMSE: 2.7183 | Valid_Loss: 2.2369 | Valid_RMSE: 3.3234 | Valid_MAPE: 0.0892 | LR: 0.001000
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-41 | Epoch: 015 | Train_Loss: 1.6443 | Train_MAPE: 0.0621 | Train_RMSE: 2.6928 | Valid_Loss: 2.1809 | Valid_RMSE: 3.2611 | Valid_MAPE: 0.0864 | LR: 0.001000
+EarlyStopping counter: 2 out of 100
+Current Time: 10-13-41 | Epoch: 016 | Train_Loss: 1.6018 | Train_MAPE: 0.0607 | Train_RMSE: 2.6507 | Valid_Loss: 2.1410 | Valid_RMSE: 3.2293 | Valid_MAPE: 0.0856 | LR: 0.001000
+Current Time: 10-13-41 | Epoch: 017 | Train_Loss: 1.5767 | Train_MAPE: 0.0598 | Train_RMSE: 2.6248 | Valid_Loss: 2.2292 | Valid_RMSE: 3.2895 | Valid_MAPE: 0.0865 | LR: 0.001000
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-42 | Epoch: 018 | Train_Loss: 1.5882 | Train_MAPE: 0.0601 | Train_RMSE: 2.6260 | Valid_Loss: 2.1076 | Valid_RMSE: 3.2089 | Valid_MAPE: 0.0861 | LR: 0.001000
+Current Time: 10-13-42 | Epoch: 019 | Train_Loss: 1.5568 | Train_MAPE: 0.0589 | Train_RMSE: 2.5979 | Valid_Loss: 2.0514 | Valid_RMSE: 3.1361 | Valid_MAPE: 0.0822 | LR: 0.001000
+Current Time: 10-13-42 | Epoch: 020 | Train_Loss: 1.5545 | Train_MAPE: 0.0589 | Train_RMSE: 2.5846 | Valid_Loss: 2.1839 | Valid_RMSE: 3.2436 | Valid_MAPE: 0.0882 | LR: 0.001000
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-42 | Epoch: 021 | Train_Loss: 1.5404 | Train_MAPE: 0.0584 | Train_RMSE: 2.5690 | Valid_Loss: 2.1263 | Valid_RMSE: 3.1640 | Valid_MAPE: 0.0822 | LR: 0.001000
+EarlyStopping counter: 2 out of 100
+Current Time: 10-13-42 | Epoch: 022 | Train_Loss: 1.5100 | Train_MAPE: 0.0573 | Train_RMSE: 2.5440 | Valid_Loss: 2.0900 | Valid_RMSE: 3.1500 | Valid_MAPE: 0.0837 | LR: 0.001000
+EarlyStopping counter: 3 out of 100
+Current Time: 10-13-42 | Epoch: 023 | Train_Loss: 1.4799 | Train_MAPE: 0.0562 | Train_RMSE: 2.5131 | Valid_Loss: 2.0871 | Valid_RMSE: 3.1349 | Valid_MAPE: 0.0831 | LR: 0.001000
+EarlyStopping counter: 4 out of 100
+Current Time: 10-13-42 | Epoch: 024 | Train_Loss: 1.4701 | Train_MAPE: 0.0559 | Train_RMSE: 2.4966 | Valid_Loss: 2.0780 | Valid_RMSE: 3.1212 | Valid_MAPE: 0.0836 | LR: 0.001000
+EarlyStopping counter: 5 out of 100
+Current Time: 10-13-43 | Epoch: 025 | Train_Loss: 1.4780 | Train_MAPE: 0.0563 | Train_RMSE: 2.4948 | Valid_Loss: 2.1096 | Valid_RMSE: 3.1500 | Valid_MAPE: 0.0855 | LR: 0.001000
+EarlyStopping counter: 6 out of 100
+Current Time: 10-13-43 | Epoch: 026 | Train_Loss: 1.4655 | Train_MAPE: 0.0557 | Train_RMSE: 2.4842 | Valid_Loss: 2.1344 | Valid_RMSE: 3.1714 | Valid_MAPE: 0.0858 | LR: 0.001000
+EarlyStopping counter: 7 out of 100
+Current Time: 10-13-43 | Epoch: 027 | Train_Loss: 1.4654 | Train_MAPE: 0.0557 | Train_RMSE: 2.4764 | Valid_Loss: 2.1244 | Valid_RMSE: 3.1630 | Valid_MAPE: 0.0871 | LR: 0.001000
+EarlyStopping counter: 8 out of 100
+Current Time: 10-13-43 | Epoch: 028 | Train_Loss: 1.4590 | Train_MAPE: 0.0555 | Train_RMSE: 2.4726 | Valid_Loss: 2.1083 | Valid_RMSE: 3.1243 | Valid_MAPE: 0.0825 | LR: 0.001000
+EarlyStopping counter: 9 out of 100
+Current Time: 10-13-43 | Epoch: 029 | Train_Loss: 1.4491 | Train_MAPE: 0.0551 | Train_RMSE: 2.4610 | Valid_Loss: 2.0152 | Valid_RMSE: 3.0605 | Valid_MAPE: 0.0811 | LR: 0.001000
+Current Time: 10-13-43 | Epoch: 030 | Train_Loss: 1.4291 | Train_MAPE: 0.0545 | Train_RMSE: 2.4437 | Valid_Loss: 2.0696 | Valid_RMSE: 3.1026 | Valid_MAPE: 0.0841 | LR: 0.001000
+EarlyStopping counter: 1 out of 100
+======== Start curriculum learning... reset the learning rate to 0.002. ========
+Current Time: 10-13-44 | Epoch: 031 | Train_Loss: 1.5628 | Train_MAPE: 0.0593 | Train_RMSE: 2.5485 | Valid_Loss: 2.1355 | Valid_RMSE: 3.1610 | Valid_MAPE: 0.0858 | LR: 0.002000
+EarlyStopping counter: 2 out of 100
+Current Time: 10-13-44 | Epoch: 032 | Train_Loss: 1.5134 | Train_MAPE: 0.0575 | Train_RMSE: 2.4990 | Valid_Loss: 1.9863 | Valid_RMSE: 3.0359 | Valid_MAPE: 0.0801 | LR: 0.002000
+Current Time: 10-13-44 | Epoch: 033 | Train_Loss: 1.4900 | Train_MAPE: 0.0564 | Train_RMSE: 2.4787 | Valid_Loss: 2.1344 | Valid_RMSE: 3.1510 | Valid_MAPE: 0.0853 | LR: 0.002000
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-44 | Epoch: 034 | Train_Loss: 1.4502 | Train_MAPE: 0.0549 | Train_RMSE: 2.4451 | Valid_Loss: 1.9901 | Valid_RMSE: 3.0250 | Valid_MAPE: 0.0811 | LR: 0.002000
+EarlyStopping counter: 2 out of 100
+Current Time: 10-13-44 | Epoch: 035 | Train_Loss: 1.4696 | Train_MAPE: 0.0557 | Train_RMSE: 2.4542 | Valid_Loss: 2.0582 | Valid_RMSE: 3.0869 | Valid_MAPE: 0.0852 | LR: 0.002000
+EarlyStopping counter: 3 out of 100
+Current Time: 10-13-44 | Epoch: 036 | Train_Loss: 1.4418 | Train_MAPE: 0.0546 | Train_RMSE: 2.4292 | Valid_Loss: 2.0964 | Valid_RMSE: 3.0949 | Valid_MAPE: 0.0829 | LR: 0.002000
+EarlyStopping counter: 4 out of 100
+Current Time: 10-13-44 | Epoch: 037 | Train_Loss: 1.4384 | Train_MAPE: 0.0543 | Train_RMSE: 2.4229 | Valid_Loss: 2.0764 | Valid_RMSE: 3.0799 | Valid_MAPE: 0.0854 | LR: 0.002000
+EarlyStopping counter: 5 out of 100
+Current Time: 10-13-45 | Epoch: 038 | Train_Loss: 1.4256 | Train_MAPE: 0.0540 | Train_RMSE: 2.4114 | Valid_Loss: 1.9925 | Valid_RMSE: 2.9980 | Valid_MAPE: 0.0793 | LR: 0.002000
+EarlyStopping counter: 6 out of 100
+Current Time: 10-13-45 | Epoch: 039 | Train_Loss: 1.3721 | Train_MAPE: 0.0523 | Train_RMSE: 2.3633 | Valid_Loss: 2.0118 | Valid_RMSE: 3.0167 | Valid_MAPE: 0.0815 | LR: 0.001000
+EarlyStopping counter: 7 out of 100
+Current Time: 10-13-45 | Epoch: 040 | Train_Loss: 1.3335 | Train_MAPE: 0.0509 | Train_RMSE: 2.3342 | Valid_Loss: 2.0062 | Valid_RMSE: 3.0021 | Valid_MAPE: 0.0808 | LR: 0.001000
+EarlyStopping counter: 8 out of 100
+Current Time: 10-13-45 | Epoch: 041 | Train_Loss: 1.3259 | Train_MAPE: 0.0505 | Train_RMSE: 2.3256 | Valid_Loss: 1.9952 | Valid_RMSE: 2.9970 | Valid_MAPE: 0.0808 | LR: 0.001000
+EarlyStopping counter: 9 out of 100
+Current Time: 10-13-45 | Epoch: 042 | Train_Loss: 1.3180 | Train_MAPE: 0.0502 | Train_RMSE: 2.3174 | Valid_Loss: 1.9945 | Valid_RMSE: 2.9892 | Valid_MAPE: 0.0803 | LR: 0.001000
+EarlyStopping counter: 10 out of 100
+Current Time: 10-13-45 | Epoch: 043 | Train_Loss: 1.3110 | Train_MAPE: 0.0500 | Train_RMSE: 2.3082 | Valid_Loss: 2.0000 | Valid_RMSE: 2.9994 | Valid_MAPE: 0.0810 | LR: 0.001000
+EarlyStopping counter: 11 out of 100
+Current Time: 10-13-46 | Epoch: 044 | Train_Loss: 1.3107 | Train_MAPE: 0.0500 | Train_RMSE: 2.3076 | Valid_Loss: 2.0172 | Valid_RMSE: 3.0168 | Valid_MAPE: 0.0827 | LR: 0.001000
+EarlyStopping counter: 12 out of 100
+Current Time: 10-13-46 | Epoch: 045 | Train_Loss: 1.3024 | Train_MAPE: 0.0497 | Train_RMSE: 2.2983 | Valid_Loss: 2.0038 | Valid_RMSE: 2.9966 | Valid_MAPE: 0.0804 | LR: 0.001000
+EarlyStopping counter: 13 out of 100
+Current Time: 10-13-46 | Epoch: 046 | Train_Loss: 1.3003 | Train_MAPE: 0.0496 | Train_RMSE: 2.2952 | Valid_Loss: 2.0237 | Valid_RMSE: 3.0076 | Valid_MAPE: 0.0813 | LR: 0.001000
+EarlyStopping counter: 14 out of 100
+Current Time: 10-13-46 | Epoch: 047 | Train_Loss: 1.2833 | Train_MAPE: 0.0490 | Train_RMSE: 2.2808 | Valid_Loss: 1.9784 | Valid_RMSE: 2.9632 | Valid_MAPE: 0.0796 | LR: 0.000500
+Current Time: 10-13-46 | Epoch: 048 | Train_Loss: 1.2796 | Train_MAPE: 0.0488 | Train_RMSE: 2.2762 | Valid_Loss: 1.9897 | Valid_RMSE: 2.9704 | Valid_MAPE: 0.0797 | LR: 0.000500
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-46 | Epoch: 049 | Train_Loss: 1.2752 | Train_MAPE: 0.0487 | Train_RMSE: 2.2711 | Valid_Loss: 1.9792 | Valid_RMSE: 2.9691 | Valid_MAPE: 0.0801 | LR: 0.000500
+EarlyStopping counter: 2 out of 100
+Current Time: 10-13-46 | Epoch: 050 | Train_Loss: 1.2716 | Train_MAPE: 0.0485 | Train_RMSE: 2.2682 | Valid_Loss: 1.9768 | Valid_RMSE: 2.9571 | Valid_MAPE: 0.0793 | LR: 0.000500
+Current Time: 10-13-47 | Epoch: 051 | Train_Loss: 1.2691 | Train_MAPE: 0.0484 | Train_RMSE: 2.2650 | Valid_Loss: 1.9908 | Valid_RMSE: 2.9645 | Valid_MAPE: 0.0794 | LR: 0.000500
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-47 | Epoch: 052 | Train_Loss: 1.2680 | Train_MAPE: 0.0484 | Train_RMSE: 2.2639 | Valid_Loss: 1.9806 | Valid_RMSE: 2.9606 | Valid_MAPE: 0.0797 | LR: 0.000500
+EarlyStopping counter: 2 out of 100
+Current Time: 10-13-47 | Epoch: 053 | Train_Loss: 1.2642 | Train_MAPE: 0.0482 | Train_RMSE: 2.2607 | Valid_Loss: 1.9769 | Valid_RMSE: 2.9568 | Valid_MAPE: 0.0795 | LR: 0.000500
+EarlyStopping counter: 3 out of 100
+Current Time: 10-13-47 | Epoch: 054 | Train_Loss: 1.2620 | Train_MAPE: 0.0482 | Train_RMSE: 2.2577 | Valid_Loss: 1.9833 | Valid_RMSE: 2.9635 | Valid_MAPE: 0.0804 | LR: 0.000500
+EarlyStopping counter: 4 out of 100
+Current Time: 10-13-47 | Epoch: 055 | Train_Loss: 1.2558 | Train_MAPE: 0.0479 | Train_RMSE: 2.2525 | Valid_Loss: 1.9786 | Valid_RMSE: 2.9599 | Valid_MAPE: 0.0800 | LR: 0.000250
+EarlyStopping counter: 5 out of 100
+Current Time: 10-13-47 | Epoch: 056 | Train_Loss: 1.2543 | Train_MAPE: 0.0479 | Train_RMSE: 2.2518 | Valid_Loss: 1.9731 | Valid_RMSE: 2.9543 | Valid_MAPE: 0.0798 | LR: 0.000250
+Current Time: 10-13-48 | Epoch: 057 | Train_Loss: 1.2521 | Train_MAPE: 0.0478 | Train_RMSE: 2.2482 | Valid_Loss: 1.9739 | Valid_RMSE: 2.9519 | Valid_MAPE: 0.0798 | LR: 0.000250
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-48 | Epoch: 058 | Train_Loss: 1.2507 | Train_MAPE: 0.0478 | Train_RMSE: 2.2468 | Valid_Loss: 1.9726 | Valid_RMSE: 2.9477 | Valid_MAPE: 0.0794 | LR: 0.000250
+Current Time: 10-13-48 | Epoch: 059 | Train_Loss: 1.2497 | Train_MAPE: 0.0477 | Train_RMSE: 2.2452 | Valid_Loss: 1.9714 | Valid_RMSE: 2.9507 | Valid_MAPE: 0.0799 | LR: 0.000250
+Current Time: 10-13-48 | Epoch: 060 | Train_Loss: 1.2481 | Train_MAPE: 0.0477 | Train_RMSE: 2.2440 | Valid_Loss: 1.9742 | Valid_RMSE: 2.9574 | Valid_MAPE: 0.0800 | LR: 0.000250
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-48 | Epoch: 061 | Train_Loss: 1.2467 | Train_MAPE: 0.0476 | Train_RMSE: 2.2425 | Valid_Loss: 1.9657 | Valid_RMSE: 2.9486 | Valid_MAPE: 0.0797 | LR: 0.000250
+Current Time: 10-13-48 | Epoch: 062 | Train_Loss: 1.2453 | Train_MAPE: 0.0476 | Train_RMSE: 2.2431 | Valid_Loss: 1.9676 | Valid_RMSE: 2.9481 | Valid_MAPE: 0.0797 | LR: 0.000250
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-48 | Epoch: 063 | Train_Loss: 1.2422 | Train_MAPE: 0.0475 | Train_RMSE: 2.2390 | Valid_Loss: 1.9695 | Valid_RMSE: 2.9453 | Valid_MAPE: 0.0794 | LR: 0.000125
+EarlyStopping counter: 2 out of 100
+Current Time: 10-13-49 | Epoch: 064 | Train_Loss: 1.2409 | Train_MAPE: 0.0474 | Train_RMSE: 2.2383 | Valid_Loss: 1.9699 | Valid_RMSE: 2.9434 | Valid_MAPE: 0.0794 | LR: 0.000125
+EarlyStopping counter: 3 out of 100
+Current Time: 10-13-49 | Epoch: 065 | Train_Loss: 1.2396 | Train_MAPE: 0.0474 | Train_RMSE: 2.2353 | Valid_Loss: 1.9677 | Valid_RMSE: 2.9441 | Valid_MAPE: 0.0794 | LR: 0.000125
+EarlyStopping counter: 4 out of 100
+Current Time: 10-13-49 | Epoch: 066 | Train_Loss: 1.2391 | Train_MAPE: 0.0473 | Train_RMSE: 2.2339 | Valid_Loss: 1.9696 | Valid_RMSE: 2.9505 | Valid_MAPE: 0.0798 | LR: 0.000125
+EarlyStopping counter: 5 out of 100
+Current Time: 10-13-49 | Epoch: 067 | Train_Loss: 1.2387 | Train_MAPE: 0.0473 | Train_RMSE: 2.2339 | Valid_Loss: 1.9705 | Valid_RMSE: 2.9503 | Valid_MAPE: 0.0798 | LR: 0.000125
+EarlyStopping counter: 6 out of 100
+Current Time: 10-13-49 | Epoch: 068 | Train_Loss: 1.2381 | Train_MAPE: 0.0473 | Train_RMSE: 2.2350 | Valid_Loss: 1.9668 | Valid_RMSE: 2.9426 | Valid_MAPE: 0.0792 | LR: 0.000125
+EarlyStopping counter: 7 out of 100
+Current Time: 10-13-49 | Epoch: 069 | Train_Loss: 1.2365 | Train_MAPE: 0.0472 | Train_RMSE: 2.2323 | Valid_Loss: 1.9676 | Valid_RMSE: 2.9462 | Valid_MAPE: 0.0796 | LR: 0.000125
+EarlyStopping counter: 8 out of 100
+Current Time: 10-13-49 | Epoch: 070 | Train_Loss: 1.2363 | Train_MAPE: 0.0472 | Train_RMSE: 2.2338 | Valid_Loss: 1.9642 | Valid_RMSE: 2.9415 | Valid_MAPE: 0.0793 | LR: 0.000125
+Current Time: 10-13-50 | Epoch: 071 | Train_Loss: 1.2348 | Train_MAPE: 0.0472 | Train_RMSE: 2.2315 | Valid_Loss: 1.9623 | Valid_RMSE: 2.9356 | Valid_MAPE: 0.0789 | LR: 0.000063
+Current Time: 10-13-50 | Epoch: 072 | Train_Loss: 1.2342 | Train_MAPE: 0.0471 | Train_RMSE: 2.2312 | Valid_Loss: 1.9607 | Valid_RMSE: 2.9380 | Valid_MAPE: 0.0791 | LR: 0.000063
+Current Time: 10-13-50 | Epoch: 073 | Train_Loss: 1.2333 | Train_MAPE: 0.0471 | Train_RMSE: 2.2299 | Valid_Loss: 1.9665 | Valid_RMSE: 2.9425 | Valid_MAPE: 0.0795 | LR: 0.000063
+EarlyStopping counter: 1 out of 100
+Current Time: 10-13-50 | Epoch: 074 | Train_Loss: 1.2332 | Train_MAPE: 0.0471 | Train_RMSE: 2.2301 | Valid_Loss: 1.9635 | Valid_RMSE: 2.9427 | Valid_MAPE: 0.0795 | LR: 0.000063
+EarlyStopping counter: 2 out of 100
+Current Time: 10-13-50 | Epoch: 075 | Train_Loss: 1.2327 | Train_MAPE: 0.0471 | Train_RMSE: 2.2286 | Valid_Loss: 1.9649 | Valid_RMSE: 2.9422 | Valid_MAPE: 0.0795 | LR: 0.000063
+EarlyStopping counter: 3 out of 100
+Current Time: 10-13-50 | Epoch: 076 | Train_Loss: 1.2324 | Train_MAPE: 0.0471 | Train_RMSE: 2.2285 | Valid_Loss: 1.9612 | Valid_RMSE: 2.9350 | Valid_MAPE: 0.0790 | LR: 0.000063
+EarlyStopping counter: 4 out of 100
+Current Time: 10-13-51 | Epoch: 077 | Train_Loss: 1.2321 | Train_MAPE: 0.0471 | Train_RMSE: 2.2296 | Valid_Loss: 1.9634 | Valid_RMSE: 2.9416 | Valid_MAPE: 0.0794 | LR: 0.000063
+EarlyStopping counter: 5 out of 100
+Current Time: 10-13-51 | Epoch: 078 | Train_Loss: 1.2312 | Train_MAPE: 0.0470 | Train_RMSE: 2.2273 | Valid_Loss: 1.9675 | Valid_RMSE: 2.9438 | Valid_MAPE: 0.0795 | LR: 0.000063
+EarlyStopping counter: 6 out of 100
+Current Time: 10-13-51 | Epoch: 079 | Train_Loss: 1.2309 | Train_MAPE: 0.0470 | Train_RMSE: 2.2266 | Valid_Loss: 1.9654 | Valid_RMSE: 2.9402 | Valid_MAPE: 0.0792 | LR: 0.000063
+EarlyStopping counter: 7 out of 100
+predict shape:  (18, 32, 6, 627)
+Test MAE: 1.96 | Test RMSE: 2.94 | Test MAPE: 8.08 |
+Average Training Time: 8.4531 secs/epoch
+Average Inference Time: 0.7542 secs/epoch
+Spend Time: 740.3353691101074

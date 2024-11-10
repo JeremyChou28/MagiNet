@@ -1,0 +1,69 @@
+Using TensorFlow backend.
+WARNING: Logging before flag parsing goes to stderr.
+W1110 01:30:32.623918 140538103080128 __init__.py:329] Limited tf.compat.v2.summary API due to missing TensorBoard installation.
+W1110 01:30:35.375300 140538103080128 module_wrapper.py:139] From gagan.py:59: The name tf.random.set_random_seed is deprecated. Please use tf.compat.v1.random.set_random_seed instead.
+
+(323, 323)
+W1110 01:30:38.571149 140538103080128 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/utils.py:76: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+W1110 01:30:38.571677 140538103080128 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/utils.py:78: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W1110 01:30:38.791890 140538103080128 module_wrapper.py:139] From gagan.py:141: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+W1110 01:30:38.849554 140538103080128 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:146: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W1110 01:30:38.851469 140538103080128 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:65: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+W1110 01:30:38.856798 140538103080128 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/utils.py:102: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W1110 01:30:38.856947 140538103080128 lazy_loader.py:50] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+W1110 01:30:40.058696 140538103080128 deprecation.py:506] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/utils.py:110: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W1110 01:30:40.136945 140538103080128 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:169: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+W1110 01:30:40.153180 140538103080128 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:177: The name tf.train.RMSPropOptimizer is deprecated. Please use tf.compat.v1.train.RMSPropOptimizer instead.
+
+W1110 01:30:40.291674 140538103080128 deprecation.py:506] From /home/zhoujianping/miniconda3/envs/tf1.14/lib/python3.7/site-packages/tensorflow_core/python/training/rmsprop.py:119: calling Ones.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W1110 01:30:40.731707 140538103080128 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:193: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W1110 01:30:41.407191 140538103080128 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:196: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+Epoch:[0], G_Loss:52.6435, D_Loss:-0.00144931, Val_RMSE:6.8019, use_time:0.11min
+Epoch:[20], G_Loss:6.0370, D_Loss:-0.00018682, Val_RMSE:4.4051, use_time:2.19min
+Epoch:[40], G_Loss:5.2582, D_Loss:-0.00016285, Val_RMSE:4.3142, use_time:4.29min
+Epoch:[60], G_Loss:4.8866, D_Loss:-0.00015370, Val_RMSE:4.2542, use_time:6.37min
+Epoch:[80], G_Loss:4.6327, D_Loss:-0.00014668, Val_RMSE:4.2087, use_time:8.43min
+Epoch:[100], G_Loss:4.4341, D_Loss:-0.00014104, Val_RMSE:4.1718, use_time:10.52min
+Epoch:[120], G_Loss:4.2721, D_Loss:-0.00013554, Val_RMSE:4.1393, use_time:12.62min
+Epoch:[140], G_Loss:4.1403, D_Loss:-0.00013094, Val_RMSE:4.1117, use_time:14.70min
+Epoch:[160], G_Loss:4.0295, D_Loss:-0.00012685, Val_RMSE:4.0872, use_time:16.76min
+Epoch:[180], G_Loss:3.9332, D_Loss:-0.00012299, Val_RMSE:4.0667, use_time:18.80min
+Epoch:[200], G_Loss:3.8478, D_Loss:-0.00011878, Val_RMSE:4.0464, use_time:20.86min
+Epoch:[220], G_Loss:3.7702, D_Loss:-0.00011469, Val_RMSE:4.0269, use_time:22.93min
+Epoch:[240], G_Loss:3.6974, D_Loss:-0.00010998, Val_RMSE:4.0066, use_time:24.98min
+Epoch:[260], G_Loss:3.6320, D_Loss:-0.00010664, Val_RMSE:3.9876, use_time:27.05min
+Epoch:[280], G_Loss:3.5735, D_Loss:-0.00010389, Val_RMSE:3.9692, use_time:29.22min
+Epoch:[300], G_Loss:3.5204, D_Loss:-0.00010149, Val_RMSE:3.9528, use_time:31.50min
+Epoch:[320], G_Loss:3.4717, D_Loss:-0.00009943, Val_RMSE:3.9383, use_time:33.78min
+Epoch:[340], G_Loss:3.4260, D_Loss:-0.00009754, Val_RMSE:3.9255, use_time:36.02min
+Epoch:[360], G_Loss:3.3825, D_Loss:-0.00009563, Val_RMSE:3.9141, use_time:38.26min
+Epoch:[380], G_Loss:3.3414, D_Loss:-0.00009410, Val_RMSE:3.9040, use_time:40.47min
+Epoch:[400], G_Loss:3.3028, D_Loss:-0.00009252, Val_RMSE:3.8950, use_time:42.69min
+Epoch:[420], G_Loss:3.2664, D_Loss:-0.00009161, Val_RMSE:3.8853, use_time:44.90min
+Epoch:[440], G_Loss:3.2320, D_Loss:-0.00009018, Val_RMSE:3.8766, use_time:47.10min
+Epoch:[460], G_Loss:3.1996, D_Loss:-0.00008896, Val_RMSE:3.8689, use_time:49.14min
+Epoch:[480], G_Loss:3.1689, D_Loss:-0.00008794, Val_RMSE:3.8605, use_time:51.24min
+['GA_GAN_concat', 'Seattle_MAR', 2.5723457, 3.7908664, 6.264897564433484, 'MAR', 0.5, 0.01, 500, 32, [32, 64], [32, 64], [64, 32], '11-10 02:23:57']
+model_name: GA_GAN_concat, data_name: Seattle_MAR
+MAE: 2.572345733642578, RMSE: 3.7908663749694824, MAPE: 6.264897564433484
+Spend time: 3203.668989419937

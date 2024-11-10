@@ -1,0 +1,29 @@
+Read configuration file: baselines/dstagnn_modules/configurations/PEMS-BAY.conf
+CUDA: cuda:1
+folder_dir: dstagnn_0.50
+params_path: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50
+delete the old one and create params directory baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50
+current epoch:  0
+validation batch 1 / 14, val_mae: 0.88
+val mae 1.0683644201074327
+best epoch:  0
+best val mae:  1.0683644201074327
+save parameters to file: baselines_save_model/dstagnn/PEMS-BAY/MNAR/dstagnn_0.50/best.params
+Traceback (most recent call last):
+  File "dstagnn.py", line 248, in <module>
+    train_main()
+  File "dstagnn.py", line 196, in train_main
+    outputs = net(encoder_inputs)
+  File "/home/zhoujianping/miniconda3/envs/torch3090/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/zhoujianping/Research/MagiNet/baselines/dstagnn_modules/model.py", line 490, in forward
+    x, res_att = block(x, res_att)
+  File "/home/zhoujianping/miniconda3/envs/torch3090/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/zhoujianping/Research/MagiNet/baselines/dstagnn_modules/model.py", line 404, in forward
+    spatial_gcn = self.cheb_conv_SAt(x, STAt,
+  File "/home/zhoujianping/miniconda3/envs/torch3090/lib/python3.8/site-packages/torch/nn/modules/module.py", line 889, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/zhoujianping/Research/MagiNet/baselines/dstagnn_modules/model.py", line 204, in forward
+    T_k_with_at = T_k.mul(
+RuntimeError: CUDA out of memory. Tried to allocate 14.00 MiB (GPU 1; 23.69 GiB total capacity; 5.93 GiB already allocated; 12.06 MiB free; 6.25 GiB reserved in total by PyTorch)

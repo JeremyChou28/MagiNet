@@ -1,0 +1,71 @@
+Using TensorFlow backend.
+WARNING: Logging before flag parsing goes to stderr.
+W1110 04:49:56.677391 140209191597248 __init__.py:329] Limited tf.compat.v2.summary API due to missing TensorBoard installation.
+W1110 04:49:59.088330 140209191597248 module_wrapper.py:139] From gagan.py:59: The name tf.random.set_random_seed is deprecated. Please use tf.compat.v1.random.set_random_seed instead.
+
+(325, 325)
+W1110 04:50:00.569381 140209191597248 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/utils.py:76: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+W1110 04:50:00.569735 140209191597248 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/utils.py:78: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+W1110 04:50:00.789963 140209191597248 module_wrapper.py:139] From gagan.py:141: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+W1110 04:50:00.853405 140209191597248 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:146: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+W1110 04:50:00.855224 140209191597248 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:65: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+W1110 04:50:00.859270 140209191597248 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/utils.py:102: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+W1110 04:50:00.859423 140209191597248 lazy_loader.py:50] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+/home/zhoujianping/Research/MagiNet/baselines/gagan_modules/layers.py:18: RuntimeWarning: invalid value encountered in true_divide
+  self.adj = adj / np.sum(adj, axis=1).reshape(-1, 1)  # mean aggregate
+W1110 04:50:02.075633 140209191597248 deprecation.py:506] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/utils.py:110: calling Constant.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W1110 04:50:02.154631 140209191597248 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:169: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+W1110 04:50:02.171074 140209191597248 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:177: The name tf.train.RMSPropOptimizer is deprecated. Please use tf.compat.v1.train.RMSPropOptimizer instead.
+
+W1110 04:50:02.311855 140209191597248 deprecation.py:506] From /home/zhoujianping/miniconda3/envs/tf1.14/lib/python3.7/site-packages/tensorflow_core/python/training/rmsprop.py:119: calling Ones.__init__ (from tensorflow.python.ops.init_ops) with dtype is deprecated and will be removed in a future version.
+Instructions for updating:
+Call initializer instance with the dtype argument instead of passing it to the constructor
+W1110 04:50:02.776462 140209191597248 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:193: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+W1110 04:50:03.422945 140209191597248 module_wrapper.py:139] From /home/zhoujianping/Research/MagiNet/baselines/gagan_modules/model_impute.py:196: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+Epoch:[0], G_Loss:89.2066, D_Loss:-0.00100417, Val_RMSE:8.3417, use_time:0.06min
+Epoch:[20], G_Loss:5.0757, D_Loss:-0.00012815, Val_RMSE:2.6491, use_time:1.12min
+Epoch:[40], G_Loss:3.9221, D_Loss:-0.00014010, Val_RMSE:2.4609, use_time:2.17min
+Epoch:[60], G_Loss:3.4157, D_Loss:-0.00012216, Val_RMSE:2.3760, use_time:3.25min
+Epoch:[80], G_Loss:3.0895, D_Loss:-0.00011130, Val_RMSE:2.3211, use_time:4.29min
+Epoch:[100], G_Loss:2.8518, D_Loss:-0.00010632, Val_RMSE:2.2726, use_time:5.35min
+Epoch:[120], G_Loss:2.6724, D_Loss:-0.00010356, Val_RMSE:2.2304, use_time:6.41min
+Epoch:[140], G_Loss:2.5328, D_Loss:-0.00010105, Val_RMSE:2.1898, use_time:7.48min
+Epoch:[160], G_Loss:2.4208, D_Loss:-0.00009831, Val_RMSE:2.1534, use_time:8.54min
+Epoch:[180], G_Loss:2.3285, D_Loss:-0.00009570, Val_RMSE:2.1254, use_time:9.60min
+Epoch:[200], G_Loss:2.2516, D_Loss:-0.00009337, Val_RMSE:2.1035, use_time:10.65min
+Epoch:[220], G_Loss:2.1849, D_Loss:-0.00009092, Val_RMSE:2.0854, use_time:11.70min
+Epoch:[240], G_Loss:2.1240, D_Loss:-0.00008875, Val_RMSE:2.0682, use_time:12.75min
+Epoch:[260], G_Loss:2.0687, D_Loss:-0.00008720, Val_RMSE:2.0509, use_time:13.80min
+Epoch:[280], G_Loss:2.0194, D_Loss:-0.00008522, Val_RMSE:2.0345, use_time:14.85min
+Epoch:[300], G_Loss:1.9744, D_Loss:-0.00008355, Val_RMSE:2.0195, use_time:15.90min
+Epoch:[320], G_Loss:1.9341, D_Loss:-0.00008175, Val_RMSE:2.0051, use_time:16.97min
+Epoch:[340], G_Loss:1.8983, D_Loss:-0.00008018, Val_RMSE:1.9926, use_time:18.03min
+Epoch:[360], G_Loss:1.8661, D_Loss:-0.00007884, Val_RMSE:1.9816, use_time:19.08min
+Epoch:[380], G_Loss:1.8372, D_Loss:-0.00007733, Val_RMSE:1.9716, use_time:20.14min
+Epoch:[400], G_Loss:1.8108, D_Loss:-0.00007601, Val_RMSE:1.9628, use_time:21.22min
+Epoch:[420], G_Loss:1.7865, D_Loss:-0.00007447, Val_RMSE:1.9541, use_time:22.28min
+Epoch:[440], G_Loss:1.7638, D_Loss:-0.00007351, Val_RMSE:1.9456, use_time:23.34min
+Epoch:[460], G_Loss:1.7412, D_Loss:-0.00007195, Val_RMSE:1.9366, use_time:24.40min
+Epoch:[480], G_Loss:1.7196, D_Loss:-0.00007117, Val_RMSE:1.9282, use_time:25.47min
+['GA_GAN_concat', 'PEMS-BAY_MAR', 1.0189178, 1.8558521, 2.090100553278153, 'MAR', 0.5, 0.01, 500, 32, [32, 64], [32, 64], [64, 32], '11-10 05:16:33']
+model_name: GA_GAN_concat, data_name: PEMS-BAY_MAR
+MAE: 1.0189177989959717, RMSE: 1.8558521270751953, MAPE: 2.090100553278153
+Spend time: 1595.6669597625732

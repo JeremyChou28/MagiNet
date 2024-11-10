@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "graphwavenet.py", line 461, in <module>
+    main()
+  File "graphwavenet.py", line 231, in main
+    dataloader = load_missdataset(
+  File "graphwavenet.py", line 183, in load_missdataset
+    ) = load_data(dataset, miss_mechanism, miss_ratio, seqlen)
+  File "/home/zhoujianping/Research/MagiNet/baselines/../load_data.py", line 23, in load_data
+    with open(
+FileNotFoundError: [Errno 2] No such file or directory: 'datasets/Shenzhen/processed/MAR/train_MAR_ms0.5_seqlen_12.pkl'

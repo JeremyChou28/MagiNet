@@ -1,0 +1,371 @@
+Read configuration file: baselines/dstagnn_modules/configurations/METR-LA.conf
+CUDA: cuda:1
+folder_dir: dstagnn_0.50
+params_path: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50
+create params directory baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50
+current epoch:  0
+validation batch 1 / 9, val_mae: 1.91
+val mae 1.9578668408923678
+best epoch:  0
+best val mae:  1.9578668408923678
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  1
+validation batch 1 / 9, val_mae: 0.25
+val mae 0.2585577153497272
+best epoch:  1
+best val mae:  0.2585577153497272
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  2
+validation batch 1 / 9, val_mae: 0.22
+val mae 0.23312010864416757
+best epoch:  2
+best val mae:  0.23312010864416757
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  3
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21665629082255894
+best epoch:  3
+best val mae:  0.21665629082255894
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  4
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21709055536323124
+current epoch:  5
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.21248754362265268
+best epoch:  5
+best val mae:  0.21248754362265268
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  6
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21601103908485836
+current epoch:  7
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21843104561169943
+current epoch:  8
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.2156148138973448
+current epoch:  9
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.2175429711739222
+current epoch:  10
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21585173904895782
+current epoch:  11
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21672840581999886
+current epoch:  12
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21552303598986733
+current epoch:  13
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21941768791940477
+current epoch:  14
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.2217431647910012
+current epoch:  15
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.2164100772804684
+global step: 1000, training loss: 0.02, time: 508.78s
+current epoch:  16
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.2166590392589569
+current epoch:  17
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21228919923305511
+best epoch:  17
+best val mae:  0.21228919923305511
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  18
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.21217159595754412
+best epoch:  18
+best val mae:  0.21217159595754412
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  19
+validation batch 1 / 9, val_mae: 0.21
+val mae 0.2121729701757431
+current epoch:  20
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.21045170393255022
+best epoch:  20
+best val mae:  0.21045170393255022
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  21
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.20703136920928955
+best epoch:  21
+best val mae:  0.20703136920928955
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  22
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.20766832596725887
+current epoch:  23
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.20848268270492554
+current epoch:  24
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.2051860193411509
+best epoch:  24
+best val mae:  0.2051860193411509
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  25
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.2057358655664656
+current epoch:  26
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.20059469838937125
+best epoch:  26
+best val mae:  0.20059469838937125
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  27
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.2033307370212343
+current epoch:  28
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.2059542586406072
+current epoch:  29
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.20730769634246826
+current epoch:  30
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.19760844939284855
+best epoch:  30
+best val mae:  0.19760844939284855
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  31
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.20089025133185917
+global step: 2000, training loss: 0.02, time: 1011.13s
+current epoch:  32
+validation batch 1 / 9, val_mae: 0.20
+val mae 0.20296420653661093
+current epoch:  33
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.19771536853578356
+current epoch:  34
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.19687790506415898
+best epoch:  34
+best val mae:  0.19687790506415898
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  35
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.1982549164030287
+current epoch:  36
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.1952592432498932
+best epoch:  36
+best val mae:  0.1952592432498932
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  37
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.19806757072607675
+current epoch:  38
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.1996530062622494
+current epoch:  39
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.1900242186254925
+best epoch:  39
+best val mae:  0.1900242186254925
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  40
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.19731755554676056
+current epoch:  41
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.1879556162489785
+best epoch:  41
+best val mae:  0.1879556162489785
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  42
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.1897723442978329
+current epoch:  43
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.19292024936940935
+current epoch:  44
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.1827625615729226
+best epoch:  44
+best val mae:  0.1827625615729226
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  45
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.19157117936346266
+current epoch:  46
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.1867466668287913
+current epoch:  47
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.1872515165143543
+global step: 3000, training loss: 0.02, time: 1509.52s
+current epoch:  48
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.19111317230595481
+current epoch:  49
+validation batch 1 / 9, val_mae: 0.19
+val mae 0.1925011326869329
+current epoch:  50
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18985356721613142
+current epoch:  51
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.19006840719117057
+current epoch:  52
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18460995621151394
+current epoch:  53
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.1826112303468916
+best epoch:  53
+best val mae:  0.1826112303468916
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  54
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18146961430708566
+best epoch:  54
+best val mae:  0.18146961430708566
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  55
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.1841827697224087
+current epoch:  56
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18242926398913065
+current epoch:  57
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18082608613702986
+best epoch:  57
+best val mae:  0.18082608613702986
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  58
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.1792453792360094
+best epoch:  58
+best val mae:  0.1792453792360094
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  59
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18722483184602526
+current epoch:  60
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17775068680445352
+best epoch:  60
+best val mae:  0.17775068680445352
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  61
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18491007884343466
+current epoch:  62
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18234892023934257
+current epoch:  63
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17564606335428026
+best epoch:  63
+best val mae:  0.17564606335428026
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+global step: 4000, training loss: 0.01, time: 2009.30s
+current epoch:  64
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.17901596426963806
+current epoch:  65
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.17752693759070504
+current epoch:  66
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17598072356647915
+current epoch:  67
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18139919638633728
+current epoch:  68
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17618989944458008
+current epoch:  69
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.1771368318133884
+current epoch:  70
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17616546154022217
+current epoch:  71
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.1756830695602629
+current epoch:  72
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.18015965653790367
+current epoch:  73
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17620949116018084
+current epoch:  74
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17389809754159716
+best epoch:  74
+best val mae:  0.17389809754159716
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  75
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17603846225473616
+current epoch:  76
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17212803330686358
+best epoch:  76
+best val mae:  0.17212803330686358
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  77
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17609782020250955
+current epoch:  78
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.1737709856695599
+current epoch:  79
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17285706185632282
+global step: 5000, training loss: 0.02, time: 2507.48s
+current epoch:  80
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17370169113079706
+current epoch:  81
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17262390421496498
+current epoch:  82
+validation batch 1 / 9, val_mae: 0.18
+val mae 0.17749571965800393
+current epoch:  83
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17198512620396084
+best epoch:  83
+best val mae:  0.17198512620396084
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  84
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17582154605123732
+current epoch:  85
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17491354048252106
+current epoch:  86
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17368528660800722
+current epoch:  87
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17135815736320284
+best epoch:  87
+best val mae:  0.17135815736320284
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+current epoch:  88
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.17613694899612004
+current epoch:  89
+validation batch 1 / 9, val_mae: 0.17
+val mae 0.1704844625459777
+best epoch:  89
+best val mae:  0.1704844625459777
+save parameters to file: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+best epoch: 89
+load weight from: baselines_save_model/dstagnn/METR-LA/MAR/dstagnn_0.50/best.params
+predicting data set batch 1 / 18
+input: (571, 207, 1, 12)
+prediction: (571, 207, 12)
+Test MAE: 3.781, Test RMSE: 6.803 Test MAPE: 7.912
+Spend Time: 2846.366082429886
