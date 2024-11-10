@@ -30,6 +30,7 @@ parser.add_argument(
     "--config_path", type=str, default="configs/METR-LA.yaml", help="config filepath"
 )
 parser.add_argument("--seed", type=int, default=0, help="random seed")
+parser.add_argument("--learnable", type=int, default=1, help="1: learnable; 0: fixed")
 args = parser.parse_args()
 
 
@@ -64,6 +65,38 @@ class Learnable_Missing_Encoding(nn.Module):
         learnable_input_emb = observed_token + missed_token
         learnable_input_emb = learnable_input_emb.transpose(-1, -2)  # (B,N,L,D)
         return learnable_input_emb
+
+
+class PositionalEmbedding(nn.Module):
+    def __init__(self, d_model, max_len=5000):
+        super(PositionalEmbedding, self).__init__()
+        # Compute the positional encodings once in log space.
+        pe = torch.zeros(max_len, d_model).float()
+        pe.require_grad = False
+
+        position = torch.arange(0, max_len).float().unsqueeze(1)
+        div_term = (
+            torch.arange(0, d_model, 2).float() * -(math.log(10000.0) / d_model)
+        ).exp()
+
+        pe[:, 0::2] = torch.sin(position * div_term)
+        pe[:, 1::2] = torch.cos(position * div_term)
+
+        pe = pe.unsqueeze(0)
+        self.register_buffer("pe", pe)
+        self.dropout = nn.Dropout(p=0.1)
+
+    def getPE(self, x):
+        return self.pe[:, : x.size(1)]
+
+    def forward(self, input_emb, position):
+        B, N, L, D = input_emb.shape  # B,N,L,D
+
+        # position emb
+        pe = self.getPE(position.view(B * N, L, -1).long())  # (B*N,L,1,D)
+        input_emb = input_emb.view(B * N, L, -1) + pe
+        input_emb = self.dropout(input_emb.view(B, N, L, D))  # (B,N,L,D)
+        return input_emb
 
 
 class Temporal_Positional_Embedding(nn.Module):
@@ -105,7 +138,10 @@ class Adaptive_Missing_Spatial_Temporal_Encoder(nn.Module):
             in_channel, hidden_dim, kernel_size=(1, 1), stride=(1, 1)
         )
         self.maskemb = Learnable_Missing_Encoding(hidden_dim)
-        self.posemb = Temporal_Positional_Embedding(hidden_dim)
+        if self.learnable:
+            self.posemb = Temporal_Positional_Embedding(hidden_dim)
+        else:
+            self.posemb = PositionalEmbedding(hidden_dim)
 
     def forward(self, x, m):
         if self.pe_learnable:
@@ -153,7 +189,7 @@ class MagiNet(nn.Module):
         self.hidden_dim = hidden_dim
 
         self.AMSTenc = Adaptive_Missing_Spatial_Temporal_Encoder(
-            in_channels, hidden_dim, learnable=True, pe_learnable=True
+            in_channels, hidden_dim, learnable=learnable, pe_learnable=pe_learnable
         )
 
         self.MASTdec = make_model(
@@ -250,7 +286,11 @@ def predict(
         pk.dump(result, fb)
 
 
-def main():
+def main(args):
+    if args.learnable == 1:
+        learnable = True
+    else:
+        learnable = False
     config_filename = args.config_path
     with open(config_filename) as f:
         config = yaml.load(f, Loader=yaml.FullLoader)
@@ -317,6 +357,7 @@ def main():
         d_model=d_model,
         n_heads=n_heads,
         adj_mx=adj_mx,
+        learnable=learnable,
     ).to(device)
     loss_function = nn.SmoothL1Loss()
     optimizer = optim.Adam(model.parameters(), lr=lr)
@@ -403,5 +444,5 @@ def main():
 
 if __name__ == "__main__":
     start_time = time.time()
-    main()
+    main(args)
     print("Spend Time: {}".format(time.time() - start_time))
