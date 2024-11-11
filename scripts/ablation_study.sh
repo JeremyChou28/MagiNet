@@ -5,21 +5,62 @@
  # @Date: 2024-11-10 10:14:31
 ### 
 
-log_path="./logs/METR-LA/MCAR"
-if [ ! -d "$log_path" ]; then
-    mkdir -p "$log_path"
-    echo "Folder created: $log_path"
-else
-    echo "Folder already exists: $log_path"
-fi
+# dataset="METR-LA"   # PEMS-BAY, Seattle, Chengdu, Shenzhen
+
+# log_path="./logs/${dataset}/MCAR"
 
 # nohup python -u main.py \
-#   --config_path "configs/METR-LA.yaml" \
+#   --config_path "configs/${dataset}.yaml" \
 #   --seed 0 \
-#   --learnable 1 > ${log_path}/learnablepos.log 2>&1 &
-# # wait
+#   --learnable 0 > ${log_path}/nonlearnablepos.log 2>&1 &
+
+
+
+
+# dataset="PEMS-BAY"   # PEMS-BAY, Seattle, Chengdu, Shenzhen
+
+# log_path="./logs/${dataset}/MCAR"
+
+# nohup python -u main.py \
+#   --config_path "configs/${dataset}.yaml" \
+#   --seed 0 \
+#   --learnable 0 > ${log_path}/nonlearnablepos.log 2>&1 &
+
+
+
+
+
+# dataset="Seattle"   # PEMS-BAY, Seattle, Chengdu, Shenzhen
+
+# log_path="./logs/${dataset}/MCAR"
+
+# nohup python -u main.py \
+#   --config_path "configs/${dataset}.yaml" \
+#   --seed 0 \
+#   --learnable 0 > ${log_path}/nonlearnablepos.log 2>&1 &
+
+
+
+
+
+# dataset="Chengdu"   # PEMS-BAY, Seattle, Chengdu, Shenzhen
+
+# log_path="./logs/${dataset}/MCAR"
+
+# nohup python -u main.py \
+#   --config_path "configs/${dataset}.yaml" \
+#   --seed 0 \
+#   --learnable 0 > ${log_path}/nonlearnablepos.log 2>&1 &
+
+
+
+
+dataset="Shenzhen"   # PEMS-BAY, Seattle, Chengdu, Shenzhen
+
+log_path="./logs/${dataset}/MCAR"
 
 nohup python -u main.py \
-  --config_path "configs/METR-LA.yaml" \
+  --config_path "configs/${dataset}.yaml" \
   --seed 0 \
   --learnable 0 > ${log_path}/nonlearnablepos.log 2>&1 &
+

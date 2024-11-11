@@ -60,19 +60,19 @@ miss_mechanism="MAR"
 # done
 
 
-# dataset="Shenzhen"
+dataset="Shenzhen"
 
-# for ((i=2021; i<=2023; i++))
-# do
-#   seed=$i
-#   nohup python -u grin.py \
-#   --dataset-name $dataset \
-#   --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
-#   --miss_mechanism $miss_mechanism \
-#   --cuda $cuda \
-#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-#   wait
-# done
+for ((i=2021; i<=2023; i++))
+do
+  seed=$i
+  nohup python -u grin.py \
+  --dataset-name $dataset \
+  --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
+  --miss_mechanism $miss_mechanism \
+  --cuda $cuda \
+  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+  wait
+done
 
 # dataset="PEMS-BAY"
 
@@ -88,7 +88,7 @@ miss_mechanism="MAR"
 # done
 
 
-miss_mechanism="MNAR"
+# miss_mechanism="MNAR"
 # MNAR
 # dataset="METR-LA"
 
@@ -117,34 +117,34 @@ miss_mechanism="MNAR"
 # done
 
 
-dataset="Chengdu"
+# dataset="Chengdu"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u grin.py \
-  --dataset-name $dataset \
-  --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u grin.py \
+#   --dataset-name $dataset \
+#   --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 
-dataset="Shenzhen"
+# dataset="Shenzhen"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u grin.py \
-  --dataset-name $dataset \
-  --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u grin.py \
+#   --dataset-name $dataset \
+#   --config ./baselines/grin_modules/config/grin/${dataset}.yaml \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 # dataset="PEMS-BAY"
 

@@ -14,10 +14,75 @@ else
     echo "Folder already exists: $log_path"
 fi
 
-cuda=2
+cuda=1
 
-# miss_mechanism="MAR"
+miss_mechanism="MAR"
 # # MAR
+# dataset="METR-LA"
+
+# for ((i=2021; i<=2022; i++))
+# do
+#   seed=$i
+#   nohup python -u mcflow.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+# dataset="Seattle"
+
+# for ((i=2021; i<=2022; i++))
+# do
+#   seed=$i
+#   nohup python -u mcflow.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+
+dataset="Chengdu"
+
+for ((i=2021; i<=2022; i++))
+do
+  seed=$i
+  nohup python -u mcflow.py \
+  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+  --device $cuda \
+  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+  wait
+done
+
+
+# dataset="Shenzhen"
+
+# for ((i=2021; i<=2022; i++))
+# do
+#   seed=$i
+#   nohup python -u mcflow.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+# dataset="PEMS-BAY"
+
+# for ((i=2021; i<=2022; i++))
+# do
+#   seed=$i
+#   nohup python -u mcflow.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --device $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+
+# miss_mechanism="MNAR"
+# MNAR
 # dataset="METR-LA"
 
 # for ((i=2021; i<=2022; i++))
@@ -79,68 +144,3 @@ cuda=2
 #   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
 #   wait
 # done
-
-
-miss_mechanism="MNAR"
-# MNAR
-# dataset="METR-LA"
-
-# for ((i=2021; i<=2022; i++))
-# do
-#   seed=$i
-#   nohup python -u mcflow.py \
-#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-#   --device $cuda \
-#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-#   wait
-# done
-
-dataset="Seattle"
-
-for ((i=2021; i<=2022; i++))
-do
-  seed=$i
-  nohup python -u mcflow.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
-
-
-dataset="Chengdu"
-
-for ((i=2021; i<=2022; i++))
-do
-  seed=$i
-  nohup python -u mcflow.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
-
-
-dataset="Shenzhen"
-
-for ((i=2021; i<=2022; i++))
-do
-  seed=$i
-  nohup python -u mcflow.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
-
-dataset="PEMS-BAY"
-
-for ((i=2021; i<=2022; i++))
-do
-  seed=$i
-  nohup python -u mcflow.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --device $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done

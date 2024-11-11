@@ -14,46 +14,46 @@ else
     echo "Folder already exists: $log_path"
 fi
 
-cuda=2
-
-# MAR
-dataset="METR-LA"
+cuda=1
 miss_mechanism="MAR"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u stgcn.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# MAR
+# dataset="METR-LA"
 
-dataset="Seattle"
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u stgcn.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u stgcn.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# dataset="Seattle"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u stgcn.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 
-dataset="Chengdu"
+# dataset="Chengdu"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u stgcn.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u stgcn.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 
 dataset="Shenzhen"
@@ -68,79 +68,79 @@ do
   wait
 done
 
-dataset="PEMS-BAY"
+# dataset="PEMS-BAY"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u stgcn.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u stgcn.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
+# miss_mechanism="MNAR"
 
 # MNAR
-dataset="METR-LA"
-miss_mechanism="MNAR"
+# dataset="METR-LA"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u stgcn.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u stgcn.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
-dataset="Seattle"
+# dataset="Seattle"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u stgcn.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
-
-
-dataset="Chengdu"
-
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u stgcn.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u stgcn.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 
-dataset="Shenzhen"
+# dataset="Chengdu"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u stgcn.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u stgcn.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
-dataset="PEMS-BAY"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u stgcn.py \
-  --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# dataset="Shenzhen"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u stgcn.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
+
+# dataset="PEMS-BAY"
+
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u stgcn.py \
+#   --config_path "configs/${miss_mechanism}/${dataset}.yaml" \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done

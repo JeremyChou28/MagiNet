@@ -1,0 +1,12 @@
+{'data': {'dataset': 'PEMS-BAY', 'miss_mechanism': 'MCAR', 'miss_ratio': 0.5, 'batch_size': 16, 'test_batch_size': 16, 'val_batch_size': 16}, 'model': {'num_nodes': 325, 'hidden_size': 32, 'in_channel': 1, 'seqlen': 12, 'st_block': 3, 'K': 3, 'd_model': 512, 'n_heads': 3}, 'train': {'cuda': 3, 'lr': '1e-3', 'epochs': 150, 'save_model_path': 'save_model/', 'result_path': 'results/'}}
+train X: (3024, 325, 2, 12) train M: (3024, 325, 2, 12) train Y: (3024, 325, 2, 12)
+valid X: (432, 325, 2, 12) valid M: (432, 325, 2, 12) valid Y: (432, 325, 2, 12)
+test X: (864, 325, 2, 12) test M: (864, 325, 2, 12) test Y: (864, 325, 2, 12)
+Epoch [0/150] :  loss =  0.06857675657898345 epoch_time: 70.14699912071228
+Epoch [1/150] :  loss =  0.026054941014283232 epoch_time: 69.2413055896759
+Epoch [2/150] :  loss =  0.020375092553280332 epoch_time: 69.21658277511597
+Epoch [3/150] :  loss =  0.017916255793164648 epoch_time: 69.40143847465515
+Epoch [4/150] :  loss =  0.015867998384964214 epoch_time: 69.5242371559143
+Epoch [5/150] :  loss =  0.014834343150218643 epoch_time: 69.92344665527344
+Epoch [6/150] :  loss =  0.014377817346482838 epoch_time: 68.42266607284546
+Epoch [7/150] :  loss =  0.013671949983786338 epoch_time: 69.6620705127716

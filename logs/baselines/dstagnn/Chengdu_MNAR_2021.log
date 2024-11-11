@@ -1,0 +1,436 @@
+Read configuration file: baselines/dstagnn_modules/configurations/Chengdu.conf
+CUDA: cuda:3
+folder_dir: dstagnn_0.50
+params_path: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50
+delete the old one and create params directory baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50
+current epoch:  0
+validation batch 1 / 18, val_mae: 1.76
+val mae 1.841409186522166
+best epoch:  0
+best val mae:  1.841409186522166
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  1
+validation batch 1 / 18, val_mae: 0.54
+val mae 0.5321795112556882
+best epoch:  1
+best val mae:  0.5321795112556882
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  2
+validation batch 1 / 18, val_mae: 0.38
+val mae 0.37057235340277356
+best epoch:  2
+best val mae:  0.37057235340277356
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  3
+validation batch 1 / 18, val_mae: 0.33
+val mae 0.32374219927522874
+best epoch:  3
+best val mae:  0.32374219927522874
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  4
+validation batch 1 / 18, val_mae: 0.30
+val mae 0.30010052687591976
+best epoch:  4
+best val mae:  0.30010052687591976
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  5
+validation batch 1 / 18, val_mae: 0.30
+val mae 0.295216366648674
+best epoch:  5
+best val mae:  0.295216366648674
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  6
+validation batch 1 / 18, val_mae: 0.29
+val mae 0.2856771929396523
+best epoch:  6
+best val mae:  0.2856771929396523
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  7
+validation batch 1 / 18, val_mae: 0.29
+val mae 0.28229090405835044
+best epoch:  7
+best val mae:  0.28229090405835044
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  8
+validation batch 1 / 18, val_mae: 0.29
+val mae 0.28563142981794143
+current epoch:  9
+validation batch 1 / 18, val_mae: 0.29
+val mae 0.2797840933005015
+best epoch:  9
+best val mae:  0.2797840933005015
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  10
+validation batch 1 / 18, val_mae: 0.28
+val mae 0.2725704047414992
+best epoch:  10
+best val mae:  0.2725704047414992
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  11
+validation batch 1 / 18, val_mae: 0.28
+val mae 0.2718950907389323
+best epoch:  11
+best val mae:  0.2718950907389323
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  12
+validation batch 1 / 18, val_mae: 0.28
+val mae 0.27269596027003395
+current epoch:  13
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.26711725029680466
+best epoch:  13
+best val mae:  0.26711725029680466
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  14
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.26830945246749455
+current epoch:  15
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.2678928921620051
+current epoch:  16
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.2663411845763524
+best epoch:  16
+best val mae:  0.2663411845763524
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  17
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.26313219798935783
+best epoch:  17
+best val mae:  0.26313219798935783
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  18
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.26353177842166686
+global step: 1000, training loss: 0.05, time: 401.40s
+current epoch:  19
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.26087459921836853
+best epoch:  19
+best val mae:  0.26087459921836853
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  20
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.2590368804004457
+best epoch:  20
+best val mae:  0.2590368804004457
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  21
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.2601185366511345
+current epoch:  22
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.2570876048670875
+best epoch:  22
+best val mae:  0.2570876048670875
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  23
+validation batch 1 / 18, val_mae: 0.27
+val mae 0.2604222355617417
+current epoch:  24
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.25630591809749603
+best epoch:  24
+best val mae:  0.25630591809749603
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  25
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.25730354835589725
+current epoch:  26
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.25388552827967537
+best epoch:  26
+best val mae:  0.25388552827967537
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  27
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.25471345831950504
+current epoch:  28
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.25350409415033126
+best epoch:  28
+best val mae:  0.25350409415033126
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  29
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.25464380035797757
+current epoch:  30
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.2531644056240718
+best epoch:  30
+best val mae:  0.2531644056240718
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  31
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.25123536503977245
+best epoch:  31
+best val mae:  0.25123536503977245
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  32
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.25262410938739777
+current epoch:  33
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.24928070770369637
+best epoch:  33
+best val mae:  0.24928070770369637
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  34
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.24926047772169113
+best epoch:  34
+best val mae:  0.24926047772169113
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  35
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.2476895112130377
+best epoch:  35
+best val mae:  0.2476895112130377
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  36
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.2493122625682089
+current epoch:  37
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.2473240022857984
+best epoch:  37
+best val mae:  0.2473240022857984
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+global step: 2000, training loss: 0.05, time: 797.37s
+current epoch:  38
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24651422765519884
+best epoch:  38
+best val mae:  0.24651422765519884
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  39
+validation batch 1 / 18, val_mae: 0.26
+val mae 0.24723108112812042
+current epoch:  40
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24502007994386885
+best epoch:  40
+best val mae:  0.24502007994386885
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  41
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24608472900258171
+current epoch:  42
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24598321484194863
+current epoch:  43
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24409504483143488
+best epoch:  43
+best val mae:  0.24409504483143488
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  44
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24454859644174576
+current epoch:  45
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24390871905618244
+best epoch:  45
+best val mae:  0.24390871905618244
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  46
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.2427188547121154
+best epoch:  46
+best val mae:  0.2427188547121154
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  47
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24104032748275334
+best epoch:  47
+best val mae:  0.24104032748275334
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  48
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24280306696891785
+current epoch:  49
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24075814336538315
+best epoch:  49
+best val mae:  0.24075814336538315
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  50
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24116611232360205
+current epoch:  51
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24233941816621357
+current epoch:  52
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.23933021475871405
+best epoch:  52
+best val mae:  0.23933021475871405
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  53
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24098468240764406
+current epoch:  54
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.24063790755139458
+current epoch:  55
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.23987812714444268
+global step: 3000, training loss: 0.04, time: 1195.35s
+current epoch:  56
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.23901141600476372
+best epoch:  56
+best val mae:  0.23901141600476372
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  57
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.23930584970447752
+current epoch:  58
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.2386306416657236
+best epoch:  58
+best val mae:  0.2386306416657236
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  59
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.23841260704729292
+best epoch:  59
+best val mae:  0.23841260704729292
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  60
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.23757587124903998
+best epoch:  60
+best val mae:  0.23757587124903998
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  61
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.2359774261713028
+best epoch:  61
+best val mae:  0.2359774261713028
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  62
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.2388540572590298
+current epoch:  63
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.23773239304622015
+current epoch:  64
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23587548318836424
+best epoch:  64
+best val mae:  0.23587548318836424
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  65
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.2353996369573805
+best epoch:  65
+best val mae:  0.2353996369573805
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  66
+validation batch 1 / 18, val_mae: 0.25
+val mae 0.23787368585666022
+current epoch:  67
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.2361115978823768
+current epoch:  68
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23410696867439482
+best epoch:  68
+best val mae:  0.23410696867439482
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  69
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.2351311585969395
+current epoch:  70
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23187166783544752
+best epoch:  70
+best val mae:  0.23187166783544752
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  71
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23280928449498284
+current epoch:  72
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23549142397112316
+current epoch:  73
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23258180502388212
+current epoch:  74
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23462892489300835
+global step: 4000, training loss: 0.03, time: 1591.74s
+current epoch:  75
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23381348119841683
+current epoch:  76
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23369285464286804
+current epoch:  77
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23259079290760887
+current epoch:  78
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23160690151982838
+best epoch:  78
+best val mae:  0.23160690151982838
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  79
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23203975376155642
+current epoch:  80
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.2316045140226682
+best epoch:  80
+best val mae:  0.2316045140226682
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  81
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23135713901784685
+best epoch:  81
+best val mae:  0.23135713901784685
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  82
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23190764006641176
+current epoch:  83
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23073986421028772
+best epoch:  83
+best val mae:  0.23073986421028772
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  84
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23091487917635176
+current epoch:  85
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.22977592878871494
+best epoch:  85
+best val mae:  0.22977592878871494
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  86
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.2292619620760282
+best epoch:  86
+best val mae:  0.2292619620760282
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+current epoch:  87
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.2300697093208631
+current epoch:  88
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.23115009235011208
+current epoch:  89
+validation batch 1 / 18, val_mae: 0.24
+val mae 0.22834146436717775
+best epoch:  89
+best val mae:  0.22834146436717775
+save parameters to file: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+best epoch: 89
+load weight from: baselines_save_model/dstagnn/Chengdu/MNAR/dstagnn_0.50/best.params
+predicting data set batch 1 / 18
+input: (576, 524, 1, 6)
+prediction: (576, 524, 6)
+Test MAE: 2.184, Test RMSE: 3.179 Test MAPE: 9.366
+Spend Time: 1936.0607187747955

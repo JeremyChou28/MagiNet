@@ -101,3 +101,40 @@ Current Time: 10-22-36 | Epoch: 060 | Train_Loss: 0.5149 | Train_MAPE: 43.3195 |
 EarlyStopping counter: 9 out of 100
 Current Time: 10-22-37 | Epoch: 061 | Train_Loss: 0.5133 | Train_MAPE: 43.8172 | Train_RMSE: 1.0402 | Valid_Loss: 0.9140 | Valid_RMSE: 1.7582 | Valid_MAPE: 0.0194 | LR: 0.000250
 EarlyStopping counter: 10 out of 100
+Current Time: 10-22-37 | Epoch: 062 | Train_Loss: 0.5115 | Train_MAPE: 42.0744 | Train_RMSE: 1.0386 | Valid_Loss: 0.9112 | Valid_RMSE: 1.7559 | Valid_MAPE: 0.0194 | LR: 0.000250
+EarlyStopping counter: 11 out of 100
+Current Time: 10-22-37 | Epoch: 063 | Train_Loss: 0.5097 | Train_MAPE: 38.6403 | Train_RMSE: 1.0357 | Valid_Loss: 0.9076 | Valid_RMSE: 1.7517 | Valid_MAPE: 0.0192 | LR: 0.000125
+EarlyStopping counter: 12 out of 100
+Current Time: 10-22-37 | Epoch: 064 | Train_Loss: 0.5091 | Train_MAPE: 35.2165 | Train_RMSE: 1.0349 | Valid_Loss: 0.9069 | Valid_RMSE: 1.7481 | Valid_MAPE: 0.0192 | LR: 0.000125
+EarlyStopping counter: 13 out of 100
+Current Time: 10-22-38 | Epoch: 065 | Train_Loss: 0.5080 | Train_MAPE: 38.9726 | Train_RMSE: 1.0349 | Valid_Loss: 0.9056 | Valid_RMSE: 1.7481 | Valid_MAPE: 0.0192 | LR: 0.000125
+EarlyStopping counter: 14 out of 100
+Current Time: 10-22-38 | Epoch: 066 | Train_Loss: 0.5079 | Train_MAPE: 33.9476 | Train_RMSE: 1.0350 | Valid_Loss: 0.9043 | Valid_RMSE: 1.7446 | Valid_MAPE: 0.0191 | LR: 0.000125
+EarlyStopping counter: 15 out of 100
+Current Time: 10-22-38 | Epoch: 067 | Train_Loss: 0.5073 | Train_MAPE: 37.3186 | Train_RMSE: 1.0324 | Valid_Loss: 0.9082 | Valid_RMSE: 1.7516 | Valid_MAPE: 0.0193 | LR: 0.000125
+EarlyStopping counter: 16 out of 100
+Current Time: 10-22-39 | Epoch: 068 | Train_Loss: 0.5061 | Train_MAPE: 36.1395 | Train_RMSE: 1.0311 | Valid_Loss: 0.9037 | Valid_RMSE: 1.7417 | Valid_MAPE: 0.0191 | LR: 0.000125
+EarlyStopping counter: 17 out of 100
+Current Time: 10-22-39 | Epoch: 069 | Train_Loss: 0.5053 | Train_MAPE: 34.7437 | Train_RMSE: 1.0306 | Valid_Loss: 0.9042 | Valid_RMSE: 1.7409 | Valid_MAPE: 0.0191 | LR: 0.000125
+EarlyStopping counter: 18 out of 100
+Current Time: 10-22-39 | Epoch: 070 | Train_Loss: 0.5052 | Train_MAPE: 33.1960 | Train_RMSE: 1.0302 | Valid_Loss: 0.9029 | Valid_RMSE: 1.7410 | Valid_MAPE: 0.0191 | LR: 0.000125
+Current Time: 10-22-39 | Epoch: 071 | Train_Loss: 0.5035 | Train_MAPE: 32.8548 | Train_RMSE: 1.0285 | Valid_Loss: 0.9026 | Valid_RMSE: 1.7431 | Valid_MAPE: 0.0190 | LR: 0.000063
+Current Time: 10-22-40 | Epoch: 072 | Train_Loss: 0.5032 | Train_MAPE: 35.1181 | Train_RMSE: 1.0268 | Valid_Loss: 0.9067 | Valid_RMSE: 1.7474 | Valid_MAPE: 0.0192 | LR: 0.000063
+EarlyStopping counter: 1 out of 100
+Current Time: 10-22-40 | Epoch: 073 | Train_Loss: 0.5024 | Train_MAPE: 33.9802 | Train_RMSE: 1.0244 | Valid_Loss: 0.9059 | Valid_RMSE: 1.7466 | Valid_MAPE: 0.0192 | LR: 0.000063
+EarlyStopping counter: 2 out of 100
+Current Time: 10-22-40 | Epoch: 074 | Train_Loss: 0.5023 | Train_MAPE: 33.5147 | Train_RMSE: 1.0262 | Valid_Loss: 0.9075 | Valid_RMSE: 1.7488 | Valid_MAPE: 0.0193 | LR: 0.000063
+EarlyStopping counter: 3 out of 100
+Current Time: 10-22-40 | Epoch: 075 | Train_Loss: 0.5016 | Train_MAPE: 32.0542 | Train_RMSE: 1.0250 | Valid_Loss: 0.9020 | Valid_RMSE: 1.7389 | Valid_MAPE: 0.0191 | LR: 0.000063
+Current Time: 10-22-41 | Epoch: 076 | Train_Loss: 0.5021 | Train_MAPE: 37.9608 | Train_RMSE: 1.0273 | Valid_Loss: 0.9055 | Valid_RMSE: 1.7446 | Valid_MAPE: 0.0192 | LR: 0.000063
+EarlyStopping counter: 1 out of 100
+Current Time: 10-22-41 | Epoch: 077 | Train_Loss: 0.5015 | Train_MAPE: 6.0040 | Train_RMSE: 1.0253 | Valid_Loss: 0.9081 | Valid_RMSE: 1.7476 | Valid_MAPE: 0.0193 | LR: 0.000063
+EarlyStopping counter: 2 out of 100
+Current Time: 10-22-41 | Epoch: 078 | Train_Loss: 0.5005 | Train_MAPE: 30.7077 | Train_RMSE: 1.0241 | Valid_Loss: 0.9025 | Valid_RMSE: 1.7416 | Valid_MAPE: 0.0191 | LR: 0.000063
+EarlyStopping counter: 3 out of 100
+Current Time: 10-22-42 | Epoch: 079 | Train_Loss: 0.5001 | Train_MAPE: 30.3926 | Train_RMSE: 1.0239 | Valid_Loss: 0.8985 | Valid_RMSE: 1.7337 | Valid_MAPE: 0.0189 | LR: 0.000063
+predict shape:  (27, 32, 12, 325)
+Test MAE: 0.88 | Test RMSE: 1.58 | Test MAPE: 1.84 |
+Average Training Time: 15.3917 secs/epoch
+Average Inference Time: 0.5802 secs/epoch
+Spend Time: 1275.3076100349426

@@ -31,18 +31,18 @@ miss_mechanism="MAR"
 #   wait
 # done
 
-dataset="Seattle"
+# dataset="Seattle"
 
-for ((i=2021; i<=2023; i++))
-do
-  seed=$i
-  nohup python -u dstagnn.py \
-  --config $config/${dataset}.conf \
-  --miss_mechanism $miss_mechanism \
-  --cuda $cuda \
-  --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
-  wait
-done
+# for ((i=2021; i<=2023; i++))
+# do
+#   seed=$i
+#   nohup python -u dstagnn.py \
+#   --config $config/${dataset}.conf \
+#   --miss_mechanism $miss_mechanism \
+#   --cuda $cuda \
+#   --seed $seed > ${log_path}/${dataset}_${miss_mechanism}_$seed.log 2>&1 &
+#   wait
+# done
 
 
 # dataset="Chengdu"

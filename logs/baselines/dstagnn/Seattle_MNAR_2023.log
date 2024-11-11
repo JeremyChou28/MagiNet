@@ -1,7 +1,4 @@
 Read configuration file: baselines/dstagnn_modules/configurations/Seattle.conf
-Traceback (most recent call last):
-  File "dstagnn.py", line 75, in <module>
-    generate_stag_matrix(dataset_name, 288, 0.01)
-  File "/home/zhoujianping/Research/MagiNet/baselines/dstagnn_modules/stag_gen.py", line 81, in generate_stag_matrix
-    num_samples, ndim, _ = df.shape
-ValueError: too many values to unpack (expected 3)
+CUDA: cuda:1
+folder_dir: dstagnn_0.50
+params_path: baselines_save_model/dstagnn/Seattle/MNAR/dstagnn_0.50

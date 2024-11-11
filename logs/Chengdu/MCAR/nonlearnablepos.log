@@ -1,0 +1,17 @@
+{'data': {'dataset': 'Chengdu', 'miss_mechanism': 'MCAR', 'miss_ratio': 0.5, 'batch_size': 16, 'test_batch_size': 16, 'val_batch_size': 16}, 'model': {'num_nodes': 524, 'hidden_size': 16, 'in_channel': 1, 'seqlen': 6, 'st_block': 3, 'K': 4, 'd_model': 512, 'n_heads': 4}, 'train': {'cuda': 3, 'lr': '1e-3', 'epochs': 150, 'save_model_path': 'save_model/', 'result_path': 'results/'}}
+train X: (1728, 524, 2, 6) train M: (1728, 524, 2, 6) train Y: (1728, 524, 2, 6)
+valid X: (576, 524, 2, 6) valid M: (576, 524, 2, 6) valid Y: (576, 524, 2, 6)
+test X: (576, 524, 2, 6) test M: (576, 524, 2, 6) test Y: (576, 524, 2, 6)
+The input graph is a 0/1 matrix; set "scaling" to False.
+Epoch [0/150] :  loss =  0.14630067189810453 epoch_time: 32.8420250415802
+Epoch [1/150] :  loss =  0.05587955533216397 epoch_time: 32.300541162490845
+Epoch [2/150] :  loss =  0.051000542731748685 epoch_time: 32.346022844314575
+Epoch [3/150] :  loss =  0.04692769116135659 epoch_time: 31.624122381210327
+Epoch [4/150] :  loss =  0.04391755146422872 epoch_time: 31.69027590751648
+Epoch [5/150] :  loss =  0.041747630401342 epoch_time: 31.611172437667847
+Epoch [6/150] :  loss =  0.040580805770500945 epoch_time: 31.760741710662842
+Epoch [7/150] :  loss =  0.03958163362134386 epoch_time: 31.922531843185425
+Epoch [8/150] :  loss =  0.037970668274081416 epoch_time: 31.590575695037842
+Epoch [9/150] :  loss =  0.03706367156916746 epoch_time: 31.795866012573242
+Epoch [10/150] :  loss =  0.036253467564367585 epoch_time: 31.813977479934692
+Epoch [11/150] :  loss =  0.035818344378774916 epoch_time: 31.85017418861389
