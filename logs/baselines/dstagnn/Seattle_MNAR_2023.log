@@ -1,4 +1,0 @@
-Read configuration file: baselines/dstagnn_modules/configurations/Seattle.conf
-CUDA: cuda:1
-folder_dir: dstagnn_0.50
-params_path: baselines_save_model/dstagnn/Seattle/MNAR/dstagnn_0.50

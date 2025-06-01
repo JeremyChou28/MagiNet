@@ -1,6 +1,0 @@
-{'data': {'dataset': 'Seattle', 'miss_mechanism': 'MCAR', 'miss_ratio': 0.5, 'batch_size': 16, 'test_batch_size': 16, 'val_batch_size': 16}, 'model': {'num_nodes': 323, 'hidden_size': 64, 'in_channel': 1, 'seqlen': 12, 'st_block': 3, 'K': 4, 'd_model': 512, 'n_heads': 4}, 'train': {'cuda': 3, 'lr': '1e-3', 'epochs': 150, 'save_model_path': 'save_model/', 'result_path': 'results/'}}
-train X: (6132, 323, 2, 12) train M: (6132, 323, 2, 12) train Y: (6132, 323, 2, 12)
-valid X: (876, 323, 2, 12) valid M: (876, 323, 2, 12) valid Y: (876, 323, 2, 12)
-test X: (1752, 323, 2, 12) test M: (1752, 323, 2, 12) test Y: (1752, 323, 2, 12)
-The input graph is a 0/1 matrix; set "scaling" to False.
-Epoch [0/150] :  loss =  0.06385867558128666 epoch_time: 269.382449388504

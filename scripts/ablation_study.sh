@@ -17,14 +17,14 @@
 
 
 
-# dataset="PEMS-BAY"   # PEMS-BAY, Seattle, Chengdu, Shenzhen
+dataset="PEMS-BAY"   # PEMS-BAY, Seattle, Chengdu, Shenzhen
 
-# log_path="./logs/${dataset}/MCAR"
+log_path="./logs/${dataset}/MCAR"
 
-# nohup python -u main.py \
-#   --config_path "configs/${dataset}.yaml" \
-#   --seed 0 \
-#   --learnable 0 > ${log_path}/nonlearnablepos.log 2>&1 &
+nohup python -u main.py \
+  --config_path "configs/${dataset}.yaml" \
+  --seed 0 \
+  --learnable 0 > ${log_path}/nonlearnablepos.log 2>&1 &
 
 
 
@@ -55,12 +55,12 @@
 
 
 
-dataset="Shenzhen"   # PEMS-BAY, Seattle, Chengdu, Shenzhen
+# dataset="Shenzhen"   # PEMS-BAY, Seattle, Chengdu, Shenzhen
 
-log_path="./logs/${dataset}/MCAR"
+# log_path="./logs/${dataset}/MCAR"
 
-nohup python -u main.py \
-  --config_path "configs/${dataset}.yaml" \
-  --seed 0 \
-  --learnable 0 > ${log_path}/nonlearnablepos.log 2>&1 &
+# nohup python -u main.py \
+#   --config_path "configs/${dataset}.yaml" \
+#   --seed 0 \
+#   --learnable 0 > ${log_path}/nonlearnablepos.log 2>&1 &
 

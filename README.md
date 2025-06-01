@@ -7,7 +7,7 @@
 
 # MagiNet
 
-It's a pytorch implementation of paper "MagiNet: Mask-Aware Graph Imputation Networkfor Missing Spatio-temporal Data".
+It's a pytorch implementation of paper "MagiNet: Mask-Aware Graph Imputation Networkfor Missing Spatio-temporal Data" accepted in TKDD.
 
 ## Requirements
 
